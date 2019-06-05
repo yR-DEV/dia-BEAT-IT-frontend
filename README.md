@@ -24,11 +24,7 @@
 - `npm install materialize-css@next`
 
 # Setup 
-- Need to make sure that the PostgreSQL application is installed and running and then database commands:
-    - ```rails db:create```
-    - ```rails db:migrate```
-    - ```rails db:seed``` (for some dummy data. if you want to make your own records the schema for each sql table is located inside of ```./db/schema.rb```)
-- Inside of your terminal ```rails s``` will start a local development server located at ```localhost:300```. 
+
 
 
 # Configuration
