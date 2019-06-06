@@ -12,20 +12,21 @@ const RecordsContainer = (props) => {
     })
 
     return (
-        <div className="container records-container">
-            
-            <table>
-                <thead>
-                    <tr>
-                    <th>Blood Sugar:</th>
-                    <th>Carbs Eaten:</th>
-                    <th>Insulin Taken:</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {records}
-                </tbody>
-            </table>
+        <div className="container">
+            <div className="card records-container"> 
+                <table>
+                    <thead>
+                        <tr>
+                        <th>Blood Sugar:</th>
+                        <th>Carbs Eaten:</th>
+                        <th>Insulin Taken:</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {records}
+                    </tbody>
+                </table>
+            </div>    
         </div>
     )
 }

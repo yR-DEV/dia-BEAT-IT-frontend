@@ -31,3 +31,13 @@
     transform: rotate(360deg);
   }
 }
+
+.jumbotron-container {
+  padding-top: 20px;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.login-btn-conatiner {
+  padding-top: 10%;
+}

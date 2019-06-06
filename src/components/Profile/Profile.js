@@ -8,6 +8,7 @@ const Profile = (props) => {
             <div className="card">
                 <div className="profile-a1c-goal">
                     {/* {props.userProfileSettings.user_id} */}
+                    DIABETES MEDICAL PROFILE HERE!
                 </div>
             </div>
         </div>
