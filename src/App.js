@@ -38,8 +38,12 @@ export default class App extends React.Component {
 
   componentDidMount = () => {
     this.main();
-
     // M.AutoInit();
+  }
+
+  handleNewBloodSugarRecord = (record) => {
+    console.log(record);
+    
   }
 
   // renderLoginRedirect = () => {
@@ -79,6 +83,7 @@ export default class App extends React.Component {
           <Route path="/records" exact render={(props) => (
             <RecordsContainer 
               bloodSugarRecords={this.state.bloodSugarRecords}
+              handleNewBloodSugarRecord={this.handleNewBloodSugarRecord}
             />  
           )}
           />

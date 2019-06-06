@@ -17,7 +17,7 @@
 
 ### **TL;DR** - Because student and am poor I cannot afford conglomeration of diabetes-meta-data through insulin pump firmware (been fighting insurance for months on months to get one), have to make app myself to improve quality of life until I get junior dev job with bomb health insurance gg. 
 
-## Frontend Repo: https://github.com/yeah-right/dia-BEAT-IT-frontend
+## Backend Repo: https://github.com/yeah-right/dia-BEAT-IT-backend
 
 # Technologies Used:
 - [React 16.8](https://reactjs.org/)

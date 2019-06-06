@@ -14,12 +14,17 @@ const RecordsContainer = (props) => {
     return (
         <div className="container">
             <div className="card records-container"> 
+                <RecordsForm 
+                    handleNewBloodSugarRecord={props.handleNewBloodSugarRecord}
+                />
                 <table>
                     <thead>
                         <tr>
-                        <th>Blood Sugar:</th>
-                        <th>Carbs Eaten:</th>
-                        <th>Insulin Taken:</th>
+                            <th>Date Submitted:</th>
+                            <th>Time Submitted:</th>
+                            <th>Blood Sugar:</th>
+                            <th>Carbs Eaten:</th>
+                            <th>Insulin Taken:</th>
                         </tr>
                     </thead>
                     <tbody>

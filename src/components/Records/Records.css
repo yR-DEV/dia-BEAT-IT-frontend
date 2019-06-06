@@ -1,3 +1,8 @@
 .records-container {
     padding: 30px;
 }
+
+.new-bs-btn {
+    display: block;
+    padding-left: 20%;
+}
