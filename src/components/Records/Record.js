@@ -2,7 +2,11 @@ import React from 'react';
 
 const Record = (props) => {
     return (
-        <div>p</div>
+        <tr>
+            <td>{props.record.blood_sugar}</td>
+            <td>{props.record.carbs}</td>
+            <td>{props.record.insulin_units}</td>
+        </tr>
     )
 }
 

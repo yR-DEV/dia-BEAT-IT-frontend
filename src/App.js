@@ -5,17 +5,21 @@ import M from 'materialize-css';
 
 import Login from './components/Login/Login';
 import RecordsContainer from './components/Records/RecordsContainer';
+import JumboTron from './components/Jumbotron';
+import Profile from './components/Profile/Profile';
 
 import './App.css';
 
 const RECORD_API = "http://localhost:3000/api/v1/blood_sugar_records"
+const METRICS_API = "http://localhost:3000/api/v1/diabetes_metrics"
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       userLoggedIn: false,
-      bloodSugarRecords: []
+      bloodSugarRecords: [],
+      userProfileSettings: {}
     }
   }
 
@@ -25,12 +29,16 @@ export default class App extends React.Component {
     fetch(RECORD_API)
       .then(response => response.json())
       .then(bloodSugarRecords => this.setState({ bloodSugarRecords }))
+
+    fetch(METRICS_API)
+      .then(response => response.json())
+      .then(userProfileSettings => this.setState({ userProfileSettings }))
   }
 
   componentDidMount = () => {
     this.main();
 
-    M.AutoInit();
+    // M.AutoInit();
   }
 
   // renderLoginRedirect = () => {
@@ -49,9 +57,9 @@ export default class App extends React.Component {
               <a href="#!" className="brand-logo">Logo</a>
               <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
               <ul className="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/profile">Profile</Link></li>
+                <li><Link to="/records">Records</Link></li>
                 <li><a href="mobile.html">Mobile</a></li>
               </ul>
             </div>
@@ -62,17 +70,40 @@ export default class App extends React.Component {
             <li><a href="collapsible.html">Javascript</a></li>
             <li><a href="mobile.html">Mobile</a></li>
           </ul>
-          <div className="container">
+
+          <Route exact path="/" render={(props) => (
+            <JumboTron />
+            )}
+          />  
+          <Route path="/records" exact render={(props) => (
             <RecordsContainer 
               bloodSugarRecords={this.state.bloodSugarRecords}
+            />  
+          )}
+          />
+          <Route path="/profile" render={(props) => (
+            <Profile 
+              userProfileSettings={this.state.userProfileSettings[0]}
             />
-          </div>
+            )}
+          />  
         </Router>  
       </div>
     );
   }
 }
 
+
+{/* <Route 
+            exact path="/" render={(props) => (
+              <PromptContainer 
+                writingPrompts={this.state.writing_prompts}
+                displayedPrompts={this.state.displayed_prompts}
+                handleMorePrompts={this.handleMorePrompts}
+                setPrompt={this.setPrompt}
+              />
+            )}
+          /> */}
 
 // import React from 'react'
 // import { Redirect } from 'react-router-dom'

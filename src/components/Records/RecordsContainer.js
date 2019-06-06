@@ -1,5 +1,8 @@
 import React from 'react';
 
+import RecordsForm from './RecordsForm'
+import './Records.css'
+
 import Record from './Record';
 
 const RecordsContainer = (props) => {
@@ -9,9 +12,20 @@ const RecordsContainer = (props) => {
     })
 
     return (
-        <div>
-            records container
-            {records}
+        <div className="container records-container">
+            
+            <table>
+                <thead>
+                    <tr>
+                    <th>Blood Sugar:</th>
+                    <th>Carbs Eaten:</th>
+                    <th>Insulin Taken:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {records}
+                </tbody>
+            </table>
         </div>
     )
 }
