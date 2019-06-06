@@ -22,6 +22,7 @@
 # Technologies Used:
 - [React 16.8](https://reactjs.org/)
 - `npm install materialize-css@next`
+- `npm install react-router-dom`
 
 # Setup 
 

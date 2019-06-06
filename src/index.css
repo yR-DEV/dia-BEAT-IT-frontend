@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.dropdown-nav {
+  float: left;
+  padding-top: 30px;
+  padding-left: 50px;
+}
