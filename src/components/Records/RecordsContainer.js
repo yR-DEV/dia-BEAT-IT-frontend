@@ -1,10 +1,19 @@
 import React from 'react';
 
-export default class RecordsContainer extends React.Component {
+import Record from './Record';
 
-    render() {
-        return (
-            <div>records container</div>
-        )
-    }
+const RecordsContainer = (props) => {
+
+    const records = props.bloodSugarRecords.map(record => {
+        return <Record key={record.id} record={record} />
+    })
+
+    return (
+        <div>
+            records container
+            {records}
+        </div>
+    )
 }
+
+export default RecordsContainer

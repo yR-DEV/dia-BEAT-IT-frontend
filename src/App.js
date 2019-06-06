@@ -6,8 +6,9 @@ import M from 'materialize-css';
 import Login from './components/Login/Login';
 import RecordsContainer from './components/Records/RecordsContainer';
 
-
 import './App.css';
+
+const RECORD_API = "http://localhost:3000/api/v1/blood_sugar_records"
 
 export default class App extends React.Component {
   constructor(props) {
@@ -21,6 +22,9 @@ export default class App extends React.Component {
 
   main = () => {
     console.log('main');
+    fetch(RECORD_API)
+      .then(response => response.json())
+      .then(bloodSugarRecords => this.setState({ bloodSugarRecords }))
   }
 
   componentDidMount = () => {
@@ -29,11 +33,11 @@ export default class App extends React.Component {
     M.AutoInit();
   }
 
-  renderLoginRedirect = () => {
-    if(this.state.userLoggedIn) {
-      return <Redirect to='/profile' />
-    }
-  }
+  // renderLoginRedirect = () => {
+  //   if(this.state.userLoggedIn) {
+  //     return <Redirect to='/profile' />
+  //   }
+  // }
 
   render() {
 
@@ -41,10 +45,10 @@ export default class App extends React.Component {
       <div className="App">
         <Router>
           <nav>
-            <div class="nav-wrapper">
-              <a href="#!" class="brand-logo">Logo</a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
+            <div className="nav-wrapper">
+              <a href="#!" className="brand-logo">Logo</a>
+              <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
+              <ul className="right hide-on-med-and-down">
                 <li><a href="sass.html">Sass</a></li>
                 <li><a href="badges.html">Components</a></li>
                 <li><a href="collapsible.html">Javascript</a></li>
@@ -52,13 +56,17 @@ export default class App extends React.Component {
               </ul>
             </div>
           </nav>
-          <ul class="sidenav" id="mobile-demo">
+          <ul className="sidenav" id="mobile-demo">
             <li><a href="sass.html">Sass</a></li>
             <li><a href="badges.html">Components</a></li>
             <li><a href="collapsible.html">Javascript</a></li>
             <li><a href="mobile.html">Mobile</a></li>
           </ul>
-
+          <div className="container">
+            <RecordsContainer 
+              bloodSugarRecords={this.state.bloodSugarRecords}
+            />
+          </div>
         </Router>  
       </div>
     );
