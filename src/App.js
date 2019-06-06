@@ -18,7 +18,8 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userLoggedIn: false,
+      userLoggedIn: true,
+      user_id: 1,
       bloodSugarRecords: [],
       userProfileSettings: {}
     }
@@ -41,9 +42,20 @@ export default class App extends React.Component {
     // M.AutoInit();
   }
 
+  addUserIdToBody = (record) => {
+    return { ...record, user_id: this.state.user_id }
+  }
+
   handleNewBloodSugarRecord = (record) => {
-    console.log(record);
-    
+    let body = this.addUserIdToBody(record); 
+    fetch(RECORD_API, {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body)
+    }).then(res => this.main())
   }
 
   // renderLoginRedirect = () => {

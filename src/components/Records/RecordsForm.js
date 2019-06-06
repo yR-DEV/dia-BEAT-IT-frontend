@@ -4,13 +4,7 @@ export default class RecordsForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            blood_sugar: 0,
-            carbs: 0,
-            insulin_units: 0,
-            time: '',
-
-        }
+        this.state = {  }
     }
 
     handleChange = (event) => {
@@ -42,10 +36,10 @@ export default class RecordsForm extends React.Component {
                                 <input name="insulin_units" placeholder="Insulin Units Here" type="number" onInput={this.handleChange}/>
                             </div>
                             <div className="input-field col s2">
-                                <input name="time" type="text" placeholder="Time in hh:mm" onInput={this.handleChange}/>
+                                <input name="record_time" type="text" placeholder="Time in hh:mm" onInput={this.handleChange}/>
                             </div>
                             <div className="input-field col s2">
-                                <input name="date" type="text" placeholder="Date in mm/dd/yyyy" onInput={this.handleChange}/>
+                                <input name="record_date" type="text" placeholder="Date in mm/dd/yyyy" onInput={this.handleChange}/>
                             </div>
                             <div className="input-field col s2">
                                 <a className="waves-effect waves-light btn red accent-2 new-bs-btn" onClick={this.handleSubmit}>Submit New BloodSugar</a>
