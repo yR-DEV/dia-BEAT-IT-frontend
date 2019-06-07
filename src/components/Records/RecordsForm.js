@@ -27,7 +27,7 @@ export default class RecordsForm extends React.Component {
                     <form className="col s12">
                         <div className="row">
                             <div className="input-field col s2">
-                                <input name="blood_sugar" placeholder="Blood Sugar Here" type="number" onInput={this.handleChange}/>
+                                <input id="blood_sugar" name="blood_sugar" placeholder="Blood Sugar Here" type="number" onInput={this.handleChange}/>
                             </div>
                             <div className="input-field col s2">
                                 <input name="carbs" placeholder="Carbs Eaten Here" type="number" onInput={this.handleChange}/>
@@ -36,10 +36,20 @@ export default class RecordsForm extends React.Component {
                                 <input name="insulin_units" placeholder="Insulin Units Here" type="number" onInput={this.handleChange}/>
                             </div>
                             <div className="input-field col s2">
-                                <input name="record_time" type="text" placeholder="Time in hh:mm" onInput={this.handleChange}/>
+                                <select name="record_time" onChange={this.handleChange}>
+                                    <option value="" disabled selected>Time</option>
+                                    <option value="morning">Morning</option>
+                                    <option value="preBreakfast">PreBreakfast</option>
+                                    <option value="postBreakfast">PostBreakfast</option>
+                                    <option value="preLunch">PreLunch</option>
+                                    <option value="postLunch">PostLunch</option>
+                                    <option value="preDinner">PreDinner</option>
+                                    <option value="postDinner">PostDinner</option>
+                                    <option value="night">Night</option>
+                                </select>
                             </div>
                             <div className="input-field col s2">
-                                <input name="record_date" type="text" placeholder="Date in mm/dd/yyyy" onInput={this.handleChange}/>
+                                <input name="record_date" type="text" placeholder="Date mm/dd/yyyy" onInput={this.handleChange}/>
                             </div>
                             <div className="input-field col s2">
                                 <a className="waves-effect waves-light btn red accent-2 new-bs-btn" onClick={this.handleSubmit}>Submit New BloodSugar</a>

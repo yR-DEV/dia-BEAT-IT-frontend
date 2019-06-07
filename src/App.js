@@ -8,6 +8,7 @@ import RecordsContainer from './components/Records/RecordsContainer';
 import JumboTron from './components/Jumbotron';
 import Profile from './components/Profile/Profile';
 import MetricsContainer from './components/Metrics/MetricsContainer';
+import CreateAccount from './components/CreateAccount/CreateAccount';
 
 import './App.css';
 
@@ -27,14 +28,20 @@ export default class App extends React.Component {
 
 
   main = () => {
-    console.log('main');
+    this.mainGetRecords();
+  }
+
+  mainGetRecords = () => {
     fetch(RECORD_API)
       .then(response => response.json())
       .then(bloodSugarRecords => this.setState({ bloodSugarRecords }))
+      .then(res => this.mainGetMetrics())
+  }
 
+  mainGetMetrics = () => {
     fetch(METRICS_API)
-      .then(response => response.json())
-      .then(userProfileSettings => this.setState({ userProfileSettings }))
+    .then(response => response.json())
+    .then(userProfileSettings => this.setState({ userProfileSettings }))
   }
 
   componentDidMount = () => {
@@ -70,7 +77,7 @@ export default class App extends React.Component {
       <div className="App">
         <Router>
           <nav>
-            <div className="nav-wrapper">
+            <div className="nav-wrapper red accent-2">
               <a className="brand-logo left"></a>
               <a data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
               <ul className="right hide-on-med-and-down">
@@ -78,6 +85,7 @@ export default class App extends React.Component {
                 <li><Link to="/profile">Profile</Link></li>
                 <li><Link to="/records">Records</Link></li>
                 <li><Link to="/metrics">Metrics</Link></li>
+                <li><Link to="/login">Login</Link></li>
               </ul>
             </div>
           </nav>
@@ -86,10 +94,16 @@ export default class App extends React.Component {
             <li><Link to="/profile">Profile</Link></li>
             <li><Link to="/records">Records</Link></li>
             <li><Link to="/metrics">Metrics</Link></li>
+            <li><Link to="/login">Login</Link></li>
           </ul>
 
           <Route exact path="/" render={(props) => (
             <JumboTron />
+            )}
+          />  
+          <Route exact path="/login" render={(props) => (
+              <Login 
+              />
             )}
           />  
           <Route path="/records" exact render={(props) => (
@@ -101,7 +115,7 @@ export default class App extends React.Component {
           />
           <Route path="/profile" render={(props) => (
             <Profile 
-              userProfileSettings={this.state.userProfileSettings[0]}
+              userProfileSettings={this.state.userProfileSettings}
             />
             )}
           />  
@@ -109,6 +123,10 @@ export default class App extends React.Component {
             <MetricsContainer />
             )}
           />  
+          <Route exact path="/create-account" render={(props) => (
+            <CreateAccount />
+            )}
+          />
         </Router>  
       </div>
     );

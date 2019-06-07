@@ -8,7 +8,7 @@ import Record from './Record';
 const RecordsContainer = (props) => {
     // the reverse here is not working nor does it work if I create a const and reverse it beforehand
     //need to figure out how to sort these by a certain column, probably another array prototype method
-    const records = props.bloodSugarRecords.reverse().map(record => {
+    const records = props.bloodSugarRecords.map(record => {
         return <Record key={record.id} record={record} />
     })
 

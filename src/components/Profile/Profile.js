@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Profile = (props) => {
-    console.log(props.userProfileSettings);
+    console.log(props);
     
     return (
         <div className="container">
