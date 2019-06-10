@@ -46,12 +46,14 @@ export default class App extends React.Component {
 
   async componentDidMount() {
     try {
-      const response = await fetch(RECORD_API);
-      if (!response.ok) {
-        throw Error(response.text)
+      const recordResponse = await fetch(RECORD_API);
+      const settingsResponse = await fetch(METRICS_API);
+      if (!recordResponse.ok || !settingsResponse.ok) {
+        throw Error(recordResponse.text || settingsResponse.text)
       }
-      const bloodSugarRecords = await response.json()
-      this.setState({ bloodSugarRecords });
+      const bloodSugarRecords = await recordResponse.json();
+      const userProfileSettings = await settingsResponse.json();
+      this.setState({ bloodSugarRecords, userProfileSettings });
     } catch(error) {
       console.log(error);
     }
@@ -137,8 +139,9 @@ export default class App extends React.Component {
             )}
           />  
           <Route path="/metrics" render={(props) => (
-            <MetricsContainer 
-              bloodSugarRecords={this.state.bloodSugarRecords}
+            this.state.bloodSugarRecords.length > 0 &&
+              <MetricsContainer 
+                bloodSugarRecords={this.state.bloodSugarRecords}
             />
             )}
           />  

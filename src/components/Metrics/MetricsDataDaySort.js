@@ -35,7 +35,6 @@ export default {
                 }
             })
         });
-        console.log(daySortObject);
         return daySortObject;
     },
 
