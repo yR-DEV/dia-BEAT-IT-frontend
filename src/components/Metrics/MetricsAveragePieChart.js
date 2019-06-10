@@ -3,58 +3,21 @@ import { ResponsivePie } from '@nivo/pie'
 
 import MetricsPieChartSort from './js/MetricsPieChartSort';
 
+var _ = require("lodash")
+
 export default class MetricsAveragePieChart extends React.PureComponent {
-
-
-    data = [
-        {
-          "id": "java",
-          "label": "java",
-          "value": 534,
-          "color": "hsl(311, 70%, 50%)"
-        },
-        {
-          "id": "lisp",
-          "label": "lisp",
-          "value": 145,
-          "color": "hsl(234, 70%, 50%)"
-        },
-        {
-          "id": "stylus",
-          "label": "stylus",
-          "value": 184,
-          "color": "hsl(168, 70%, 50%)"
-        },
-        {
-          "id": "c",
-          "label": "c",
-          "value": 332,
-          "color": "hsl(104, 70%, 50%)"
-        },
-        {
-          "id": "hack",
-          "label": "hack",
-          "value": 560,
-          "color": "hsl(133, 70%, 50%)"
-        }
-      ]
-
-    componentDidMount() {
-
-        if (this.props.averagesObject) {
-            console.log(this.props);
-            
-            const pieChartData = MetricsPieChartSort.startSort(this.props.averagesObject)
-            console.log(pieChartData);
-            
-        }
-    }  
+    state = {
+        averagesObj: {}
+    }
 
     render() {
+        const averagesObj = MetricsPieChartSort.startSort(this.props.averagesObject)
         return (
             <div className="pie-chart-container">
+
+                {/* { this.props.averagesObject && averages.length > 0  && this.averagesObject && */}
                 <ResponsivePie
-                    data={this.data}
+                    data={averagesObj}
                     margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
                     innerRadius={0.5}
                     padAngle={0.7}
@@ -166,6 +129,7 @@ export default class MetricsAveragePieChart extends React.PureComponent {
                         }
                     ]}
                 />
+                {/* } */}
 {/* ) */}
             </div>
         )
