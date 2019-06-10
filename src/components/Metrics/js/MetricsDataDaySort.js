@@ -27,11 +27,10 @@ export default {
 
     pushPlotPointsToObject(dayObj, bloodSugarRecords) {
         const daySortObject = dayObj;
-        const asdf = dayObj.forEach((day, i) => {
+        dayObj.forEach((day, i) => {
             bloodSugarRecords.forEach(record => {
                 if (record.record_date === day.id) {
                     return daySortObject[i].data.push(this.createPlotPoint(record.record_time, record.blood_sugar));
-
                 }
             })
         });

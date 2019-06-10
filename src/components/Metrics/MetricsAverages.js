@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MetricsAveragesSort from './MetricsAveragesSort';
+import MetricsAveragesSort from './js/MetricsAveragesSort';
 
 export default class MetricsAverages extends React.PureComponent {
     state = {
@@ -10,7 +10,8 @@ export default class MetricsAverages extends React.PureComponent {
     componentDidMount() {
         if (this.props.bloodSugarRecords.length > 1) {
             const averageData = MetricsAveragesSort.startAverageSort(this.props.bloodSugarRecords);
-            this.setState({ averageData })        
+            this.setState({ averageData });
+            this.props.setDayAverages(averageData);
         }
     }
     

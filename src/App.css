@@ -61,3 +61,7 @@
   /* height: 800px; */
   text-align: center;
 }
+
+.pie-chart-container {
+  height: 900px;
+}
