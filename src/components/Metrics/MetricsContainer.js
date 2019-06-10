@@ -1,70 +1,111 @@
 import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
 
-const data = [
+import MetricsDataSort from './MetricsDataSort';
+import Login from '../Login/Login';
+
+const data1 = [
     {
-      "id": "japan",
+      "id": "06/06/2019",
       "color": "hsl(349, 70%, 50%)",
       "data": [
         {
-          "x": "00:00",
+          "x": "Morning",
           "y": 256
         },
         {
-          "x": "02:00",
+          "x": "PreBreakfast",
           "y": 247
         },
         {
-          "x": "04:00",
+          "x": "PostBreakfast",
           "y": 239
         },
         {
-          "x": "06:00",
+          "x": "PreLunch",
           "y": 166
         },
         {
-          "x": "08:00",
+          "x": "PostLunch",
           "y": 86
         },
         {
-          "x": "10:00",
+          "x": "PreDinner",
           "y": 234
         },
         {
-          "x": "12:00",
+          "x": "PostDinner",
           "y": 159
         },
         {
-          "x": "14:00",
+          "x": "Night",
+          "y": 127
+        },
+
+      ]
+    },
+    {
+      "id": "day",
+      "color": "hsl(349, 70%, 40%)",
+      "data": [
+        {
+          "x": "Morning",
+          "y": 104
+        },
+        {
+          "x": "PreBreakfast",
           "y": 127
         },
         {
-          "x": "16:00",
-          "y": 278
+          "x": "PostBreakfast",
+          "y": 439
         },
         {
-          "x": "18:00",
-          "y": 228
+          "x": "PreLunch",
+          "y": 196
         },
         {
-          "x": "20:00",
-          "y": 200
+          "x": "PostLunch",
+          "y": 186
         },
         {
-          "x": "22:00",
-          "y": 155
+          "x": "PreDinner",
+          "y": 134
         },
         {
-            "x": "24:00",
-            "y": 202
-        }
+          "x": "PostDinner",
+          "y": 259
+        },
+        {
+          "x": "Night",
+          "y": 97
+        },
+
       ]
     },
 ]
-const MetricsContainer = (props) => (
-    <div className="metrics-container">
+
+// const data = MetricsDataSort.sortByDay(props.bloodSugarRecords)
+
+
+const MetricsContainer = (props) => {
+  
+  // This is the proper array of data structure and requirement 
+  // but because my application refreshes 3 times, I get errors from nivo
+  // when the data is undefined nivo graph dependency crashes
+  const dayData = MetricsDataSort.startDaySort(props.bloodSugarRecords)
+  console.log(dayData);
+  console.log(data1);
+  
+  
+  
+  
+
+  return (
+    <div className="container">  
+      <div className="metrics-container">
         <ResponsiveLine
-            data={data}
+            data={data1}
             margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
             xScale={{ type: 'point' }}
             yScale={{ type: 'linear', stacked: true, min: 'auto', max: 'auto' }}
@@ -75,7 +116,7 @@ const MetricsContainer = (props) => (
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: 'transportation',
+                legend: 'Time of Day',
                 legendOffset: 36,
                 legendPosition: 'middle'
             }}
@@ -84,11 +125,11 @@ const MetricsContainer = (props) => (
                 tickSize: 5,
                 tickPadding: 5,
                 tickRotation: 0,
-                legend: 'count',
+                legend: 'Blood Sugar mg/dl',
                 legendOffset: -40,
                 legendPosition: 'middle'
             }}
-            colors={{ scheme: 'nivo' }}
+            colors={{ scheme: 'dark2' }}
             pointSize={10}
             pointColor={{ theme: 'background' }}
             pointBorderWidth={2}
@@ -123,7 +164,12 @@ const MetricsContainer = (props) => (
                 }
             ]}
         />
-    </div>    
-)
+    </div> 
+    <div className="container">
+
+    </div>
+  </div>     
+  )
+}
 
 export default MetricsContainer

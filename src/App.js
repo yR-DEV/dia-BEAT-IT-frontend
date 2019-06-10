@@ -28,25 +28,42 @@ export default class App extends React.Component {
 
 
   main = () => {
-    this.mainGetRecords();
+    this.componentDidMount();
   }
 
-  mainGetRecords = () => {
-    fetch(RECORD_API)
-      .then(response => response.json())
-      .then(bloodSugarRecords => this.setState({ bloodSugarRecords }))
-      .then(res => this.mainGetMetrics())
-  }
+  // mainGetRecords = () => {
+  //   fetch(RECORD_API)
+  //     .then(response => response.json())
+  //     .then(bloodSugarRecords => this.setState({ bloodSugarRecords }))
+  //     .then(res => this.mainGetMetrics())
+  // }
 
-  mainGetMetrics = () => {
-    fetch(METRICS_API)
-    .then(response => response.json())
-    .then(userProfileSettings => this.setState({ userProfileSettings }))
-  }
+  // mainGetMetrics = () => {
+  //   fetch(METRICS_API)
+  //   .then(response => response.json())
+  //   .then(userProfileSettings => this.setState({ userProfileSettings }))
+  // }
 
-  componentDidMount = () => {
-    this.main();
+  async componentDidMount() {
+    try {
+      const response = await fetch(RECORD_API);
+      if (!response.ok) {
+        throw Error(response.text)
+      }
+      const bloodSugarRecords = await response.json()
+      this.setState({ bloodSugarRecords });
+    } catch(error) {
+      console.log(error);
+    }
+    // this.main();
     // M.AutoInit();
+    // fetch(RECORD_API)
+    //   .then(response => response.json())
+    //   .then(bloodSugarRecords => this.setState({ bloodSugarRecords }))
+    //   .then(res => fetch(METRICS_API))
+    //     .then(response => response.json())
+    //     .then(userProfileSettings => this.setState({ userProfileSettings }))
+
   }
 
   addUserIdToBody = (record) => {
@@ -120,7 +137,9 @@ export default class App extends React.Component {
             )}
           />  
           <Route path="/metrics" render={(props) => (
-            <MetricsContainer />
+            <MetricsContainer 
+              bloodSugarRecords={this.state.bloodSugarRecords}
+            />
             )}
           />  
           <Route exact path="/create-account" render={(props) => (
