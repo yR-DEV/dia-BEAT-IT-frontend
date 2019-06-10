@@ -55,3 +55,9 @@
   padding: 5%;
   height: 900px;
 }
+
+.averages-container {
+  padding: 5%;
+  /* height: 800px; */
+  text-align: center;
+}

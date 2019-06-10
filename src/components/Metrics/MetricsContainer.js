@@ -2,21 +2,34 @@ import React from 'react';
 import { ResponsiveLine } from '@nivo/line';
 
 import MetricsDataDaySort from './MetricsDataDaySort';
-
+import MetricsAverages from './MetricsAverages';
 // import Login from '../Login/Login';
 
 // const data = MetricsDataSort.sortByDay(props.bloodSugarRecords)
 
+// [
+//   {
+//     "id": "java",
+//     "label": "java",
+//     "value": 534,
+//     "color": "hsl(311, 70%, 50%)"
+//   },
+//   {
+//     "id": "lisp",
+//     "label": "lisp",
+//     "value": 145,
+//     "color": "hsl(234, 70%, 50%)"
+//   },
+// ]
 
 export default class MetricsContainer extends React.PureComponent {
   state = {
-    dayData: []
+    dayLineGraphData: []
   }
   componentDidMount() {
-    console.log(this.props.bloodSugarRecords)
     if (this.props.bloodSugarRecords.length > 1) {
-    const dayData = MetricsDataDaySort.startDaySort(this.props.bloodSugarRecords)
-    this.setState({ dayData })
+    const dayLineGraphData = MetricsDataDaySort.startDaySort(this.props.bloodSugarRecords);
+    this.setState({ dayLineGraphData })
     }
     
   }
@@ -25,12 +38,17 @@ render() {
 
   return (
     <div className="container"> 
+    <div className="card">
+        <MetricsAverages 
+          bloodSugarRecords={this.props.bloodSugarRecords}
+        />    
+      </div>
       <div className="card"> 
         <h2>Blood Sugars by Day</h2>
-        {this.state.dayData.length > 0 && this.props.bloodSugarRecords.length > 0 &&
+        {this.state.dayLineGraphData.length > 0 && this.props.bloodSugarRecords.length > 0 &&
           <div className="metrics-container">
             <ResponsiveLine
-                data={this.state.dayData}
+                data={this.state.dayLineGraphData}
                 margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
                 xScale={{ type: 'point' }}
                 yScale={{ type: 'linear', stacked: false, min: 'auto', max: 'auto' }}
@@ -91,9 +109,6 @@ render() {
             />
         </div>
       }    
-      </div>
-      <div className="card">
-        p
       </div>
     </div>
 
