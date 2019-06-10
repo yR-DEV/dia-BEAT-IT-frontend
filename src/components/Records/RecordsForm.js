@@ -8,15 +8,11 @@ export default class RecordsForm extends React.Component {
     }
 
     handleChange = (event) => {
-        console.log('something is changing');
-        console.log(event.target.value);
         const { name, value } = event.target
         this.setState({ [name]: value })
     }
 
     handleSubmit = (event) => {
-        // console.log(event.target.value);
-        // console.log('we here', 'here is the state --------------------------------', this.state, '--------------------------------');
         this.props.handleNewBloodSugarRecord(this.state);
     }
 
@@ -37,7 +33,7 @@ export default class RecordsForm extends React.Component {
                             </div>
                             <div className="input-field col s2">
                                 <select name="record_time" onChange={this.handleChange}>
-                                    <option value="" disabled selected>Time</option>
+                                    <option value="" disabled defaultValue>Time</option>
                                     <option value="morning">Morning</option>
                                     <option value="preBreakfast">PreBreakfast</option>
                                     <option value="postBreakfast">PostBreakfast</option>

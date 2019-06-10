@@ -13,9 +13,9 @@ export default class MetricsAveragePieChart extends React.PureComponent {
     render() {
         const averagesObj = MetricsPieChartSort.startSort(this.props.averagesObject)
         return (
+            <div>
+            <h2>Averages Broken Down </h2>
             <div className="pie-chart-container">
-
-                {/* { this.props.averagesObject && averages.length > 0  && this.averagesObject && */}
                 <ResponsivePie
                     data={averagesObj}
                     margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
@@ -129,9 +129,8 @@ export default class MetricsAveragePieChart extends React.PureComponent {
                         }
                     ]}
                 />
-                {/* } */}
-{/* ) */}
             </div>
+        </div>
         )
     }
 }

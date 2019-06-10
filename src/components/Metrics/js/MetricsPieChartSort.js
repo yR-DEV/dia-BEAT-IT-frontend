@@ -1,7 +1,4 @@
 export default {
-
-    // "hsl(311, 70%, 50%)"
-
     pieChartSkeleton: [{
         "id": "",
         "label": "",
@@ -47,7 +44,7 @@ export default {
     setColor(skeletonClone) {
         const randomColor = Math.floor(Math.random() * 350)
         skeletonClone.forEach(entry => {
-            entry["color"] = `hsl(${Math.floor(Math.random() * 350) + 100}, 70%, 50%)`
+            entry["color"] = `hsl(${Math.floor(Math.random() * 350)}, 70%, 50%)`
             return entry
         })
         return skeletonClone;
