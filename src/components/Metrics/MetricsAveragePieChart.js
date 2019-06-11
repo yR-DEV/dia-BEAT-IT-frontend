@@ -14,7 +14,7 @@ export default class MetricsAveragePieChart extends React.PureComponent {
         const averagesObj = MetricsPieChartSort.startSort(this.props.averagesObject)
         return (
             <div>
-            <h2>Averages Broken Down </h2>
+            <h2>Average Blood Sugar Broken Down </h2>
             <div className="pie-chart-container">
                 <ResponsivePie
                     data={averagesObj}

@@ -31,19 +31,6 @@ export default class App extends React.Component {
     this.componentDidMount();
   }
 
-  // mainGetRecords = () => {
-  //   fetch(RECORD_API)
-  //     .then(response => response.json())
-  //     .then(bloodSugarRecords => this.setState({ bloodSugarRecords }))
-  //     .then(res => this.mainGetMetrics())
-  // }
-
-  // mainGetMetrics = () => {
-  //   fetch(METRICS_API)
-  //   .then(response => response.json())
-  //   .then(userProfileSettings => this.setState({ userProfileSettings }))
-  // }
-
   async componentDidMount() {
     try {
       const recordResponse = await fetch(RECORD_API);
@@ -57,15 +44,6 @@ export default class App extends React.Component {
     } catch(error) {
       console.log(error);
     }
-    // this.main();
-    // M.AutoInit();
-    // fetch(RECORD_API)
-    //   .then(response => response.json())
-    //   .then(bloodSugarRecords => this.setState({ bloodSugarRecords }))
-    //   .then(res => fetch(METRICS_API))
-    //     .then(response => response.json())
-    //     .then(userProfileSettings => this.setState({ userProfileSettings }))
-
   }
 
   addUserIdToBody = (record) => {

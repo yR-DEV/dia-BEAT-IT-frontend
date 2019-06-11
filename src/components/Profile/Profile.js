@@ -1,18 +1,24 @@
 import React from 'react';
 
-const Profile = (props) => {
-    console.log(props);
-    
-    return (
-        <div className="container">
-            <div className="card">
-                <div className="profile-a1c-goal">
-                    {/* {props.userProfileSettings.user_id} */}
-                    DIABETES MEDICAL PROFILE HERE!
+export default class Profile extends React.PureComponent {
+    state = {
+        userProfileSettings: []
+    }
+
+    render() {
+        return (
+            <div className="container">
+                { this.props.userProfileSettings && this.state.userProfileSettings &&
+                <div className="card">
+                    <div className="profile-a1c-goal">
+                        {/* {this.state.userProfileSettings[0].id} */}
+                        DIABETES MEDICAL PROFILE HERE!
+                    </div>
                 </div>
+                }
             </div>
-        </div>
-    )
+        )
+    }
+    
 }
 
-export default Profile
