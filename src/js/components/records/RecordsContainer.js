@@ -5,6 +5,8 @@ import RecordsForm from './RecordsForm';
 import Record from './Record';
 import BSRecord from './BSRecord';
 
+import { getBloodSugarRecords } from '../../actions/index';
+
 const mapStateToProps = (state) => {
     return { bloodSugarRecords: state.bloodSugarRecords }
 };
@@ -41,5 +43,10 @@ const RecordsContainer = ({ bloodSugarRecords }) => {
     )
 }
 
-const RecordsContainerConnected = connect(mapStateToProps)(RecordsContainer);
-export default RecordsContainerConnected;
+export default connect(
+    mapStateToProps,
+    { getBloodSugarRecords }
+) (RecordsContainer)
+
+// const RecordsContainerConnected = connect(mapStateToProps)(RecordsContainer);
+// export default RecordsContainerConnected;
