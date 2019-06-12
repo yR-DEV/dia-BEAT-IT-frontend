@@ -29,7 +29,8 @@
 - `npm install redux-thunk`
 
 # Setup 
-
+- `npm install`
+- `npm start` (to start development server)
 
 
 # Configuration

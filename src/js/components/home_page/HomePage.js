@@ -19,8 +19,8 @@ class HomePage extends Component {
                   <a><img className="jumbotron-logo" src="https://smallimg.pngkey.com/png/small/71-719828_the-awesome-smiley-face-by-thevideogameguy-d5atcdm-awesome.png"/></a>
                   <div className="container login-btn-container">
                       <div className="row">
-                          <a className="waves-effect waves-light btn-large red accent-2 root-url-btn">Login</a>
-                          <a className="waves-effect waves-light btn-large red accent-2 root-url-btn">Create Account</a>
+                          <Link to="/login"><a className="waves-effect waves-light btn-large red accent-2 root-url-btn">Login</a></Link>
+                          <Link to="/create-account"><a className="waves-effect waves-light btn-large red accent-2 root-url-btn">Create Account</a></Link>
                       </div>
                   </div>
               </div>

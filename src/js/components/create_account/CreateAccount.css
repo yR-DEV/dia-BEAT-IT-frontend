@@ -1,0 +1,16 @@
+.create-form-container {
+    width: 500px;
+}
+
+.header-create-form-container {
+    height: 80px;
+}
+
+.create-form-submit-btn {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.create-form-input-container {
+    padding: 20px 40px;
+}
