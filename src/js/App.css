@@ -33,5 +33,9 @@
 }
 
 .pie-chart-container {
-  height: 900px;  
+  height: 700px;  
+}
+
+.line-graph-container {
+  height: 700px;
 }

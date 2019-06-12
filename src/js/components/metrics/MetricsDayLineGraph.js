@@ -1,29 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { ResponsiveLine } from '@nivo/line';
 
 import MetricsDataDaySort from './js/MetricsDataDaySort';
 
-export default class MetricsDayLineGraph extends React.PureComponent {
-    state = {
-        dayLineGraphData: [],
-    }
+import { getBloodSugarRecords } from '../../actions/index';
 
-    componentDidMount() {
-        if (this.props.bloodSugarRecords.length > 1) {
-            const dayLineGraphData = MetricsDataDaySort.startDaySort(this.props.bloodSugarRecords);
-            this.setState({ dayLineGraphData });
-            this.props.setDayLineGraphData(dayLineGraphData);
-        }
-    }
 
-    render() {
-        return (
-            <div className="card"> 
-        <h2>Blood Sugars by Day</h2>
-        {this.state.dayLineGraphData.length > 0 && this.props.bloodSugarRecords.length > 0 &&
-          <div className="metrics-container">
+const mapStateToProps = (state) => {
+    return { bloodSugarRecords: state.bloodSugarRecords }
+}
+
+const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
+    const dayLineGraphData = MetricsDataDaySort.startDaySort(bloodSugarRecords);
+    return (
+    <div className="card"> 
+    <h2>Blood Sugars by Day</h2>
+        {dayLineGraphData.length > 0 && bloodSugarRecords.length > 0 &&
+          <div className="line-graph-container">
             <ResponsiveLine
-                data={this.state.dayLineGraphData}
+                data={dayLineGraphData}
                 margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
                 xScale={{ type: 'point' }}
                 yScale={{ type: 'linear', stacked: false, min: 'auto', max: 'auto' }}
@@ -83,8 +79,12 @@ export default class MetricsDayLineGraph extends React.PureComponent {
                 ]}
             />
         </div>
-      }    
-      </div>
+      }
+     p </div>
         )
-    }
 }
+
+export default connect(
+    mapStateToProps,
+    { getBloodSugarRecords }
+) (MetricsDayLineGraph)

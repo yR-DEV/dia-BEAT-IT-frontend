@@ -9,33 +9,11 @@ import MetricsBSRecord from './MetricsBSRecord';
 
 import { getBloodSugarRecords } from '../../actions/index';
 
-
-var _ = require('lodash');
-
 const mapStateToProps = (state) => {
   return { bloodSugarRecords: state.bloodSugarRecords }
 }
 
 const MetricsContainer = ({ bloodSugarRecords }) => {
-  // state = {
-  //   dayData: [],
-  //   averagesObject: {}
-  // }
-
-  // setDayAverages = (averagesObject) => {
-  //   if (averagesObject) {
-  //     this.setState({ averagesObject })
-  //   }
-  // }
-  
-  // setDayLineGraphData = (dayData) => {
-  //    if (dayData) {
-  //     this.setState({ dayData });
-  //    }
-  // }
-
-
-
     return (
       <div className="container"> 
         <div className="card">
@@ -46,14 +24,12 @@ const MetricsContainer = ({ bloodSugarRecords }) => {
           <MetricsAveragePieChart 
           />
         </div>
-        {/* <div className="card">
+        <div className="card">
           <MetricsDayLineGraph 
-            bloodSugarRecords={this.props.bloodSugarRecords}
-            setDayLineGraphData={this.setDayLineGraphData}
           />
         </div>
-        <div className="card">
-          <MetricsAveragePieChart 
+        {/* <div className="card">
+          <MetricsInsulinAveragePieChart 
             averagesObject={this.state.averagesObject}
           />
         </div> */}
