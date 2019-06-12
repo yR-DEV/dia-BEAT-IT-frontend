@@ -10,6 +10,7 @@ import HomePage from './components/home_page/HomePage';
 import ProfileContainer from './components/profile/ProfileContainer';
 import Login from './components/login/Login';
 import CreateAccount from './components/create_account/CreateAccount';
+import MetricsContainer from './components/metrics/MetricsContainer';
 
 // const RECORD_API = "http://localhost:3000/api/v1/blood_sugar_records"
 // const METRICS_API = "http://localhost:3000/api/v1/diabetes_metrics"
@@ -37,6 +38,11 @@ export default class App extends React.Component {
             <Route path="/profile"
               render={() => (
                 <ProfileContainer />
+              )}
+            />
+            <Route path="/metrics"
+              render={() => (
+                <MetricsContainer />
               )}
             />
             <Route path="/login"

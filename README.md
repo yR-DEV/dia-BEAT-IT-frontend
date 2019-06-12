@@ -27,6 +27,9 @@
 - `npm install react-redux`
 - `npm install uuid`
 - `npm install redux-thunk`
+- `npm install lodash`
+- `npm install @nivo/line`
+- `npm install @nivo/pie`
 
 # Setup 
 - `npm install`
