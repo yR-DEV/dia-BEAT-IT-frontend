@@ -42,10 +42,10 @@ const MetricsContainer = ({ bloodSugarRecords }) => {
           <MetricsAverages 
           />    
         </div>
-        {/* <div className="card">
-          <MetricsInsulinAveragePieChart 
+        <div className="card">
+          <MetricsAveragePieChart 
           />
-        </div> */}
+        </div>
         {/* <div className="card">
           <MetricsDayLineGraph 
             bloodSugarRecords={this.props.bloodSugarRecords}

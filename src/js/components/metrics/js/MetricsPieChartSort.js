@@ -1,3 +1,4 @@
+var _ = require('lodash');
 export default {
     pieChartSkeleton: [{
         "id": "",
@@ -84,7 +85,11 @@ export default {
     },
 
     startSort(averagesData) {
-        return this.createPieChartEntry(averagesData)
+        if (_.isEmpty(averagesData)) {
+            return "undefined";
+        } else {
+            return this.createPieChartEntry(averagesData);
+        }
     },
 
 

@@ -10,10 +10,6 @@ const mapStateToProps = (state) => {
     return { bloodSugarRecords: state.bloodSugarRecords }
 };
 
-// if (!_.isEmpty(bloodSugarRecords)) {
-//     const averageData = MetricsAveragesSort.startAverageSort(state.bloodSugarRecords);
-// }  
-
 const MetricsAverages = ({ bloodSugarRecords }) => {  
     const averageData = MetricsAveragesSort.startAverageSort(bloodSugarRecords);
         return (
@@ -65,7 +61,6 @@ const MetricsAverages = ({ bloodSugarRecords }) => {
                 }
             </div>
         )    
-    // }
 }
 export default connect(
     mapStateToProps,
