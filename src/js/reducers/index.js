@@ -2,7 +2,6 @@ import { ADD_BLOOD_SUGAR_RECORD,
          RECORD_DATA_LOADED,
          PROFILE_DATA_LOADED} from '../constants/action-types';
 
-
 const initialState = {
     bloodSugarRecords: [],
     userDiabetesProfile: []
@@ -24,8 +23,6 @@ const rootReducer = (state = initialState, action) => {
             userDiabetesProfile: action.payload
         })
     }
-    // console.log(state);
-    
     return state;
 }
 

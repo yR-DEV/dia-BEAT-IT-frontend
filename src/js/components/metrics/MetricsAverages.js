@@ -14,47 +14,65 @@ const MetricsAverages = ({ bloodSugarRecords }) => {
     const averageData = MetricsAveragesSort.startAverageSort(bloodSugarRecords);
         return (
             <div className="averages-container">
-                <h2>Averages by Time of Day</h2>
+                <h1>Averages by Time of Day</h1>
                 {averageData !== undefined && 
                     <div className="row">
                         <div className="col s-4">
                             <h3>Total Average:</h3>
-                            <h4>{averageData.total_average} mg/dl</h4>
+                            <div style={{ color: averageData.total_average > 130 ? 'red' : 'black' }}>
+                                <h4>{averageData.total_average} mg/dl</h4>
+                            </div>
                         </div>
                         <div className="row col s8">
                             <div className="col s3">
                                 <h5>Morning</h5>
-                                <p>{averageData.morning} mg/dl</p>
+                                <div style={{ color: averageData.morning > 130 ? 'red' : 'black' }}>
+                                    <p>{averageData.morning} mg/dl</p>
+                                </div>
                             </div>
                             <div className="col s3">
                                 <h5>preBreakfast</h5>
-                                <p>{averageData.preBreakfast} mg/dl</p>
+                                <div style={{ color: averageData.preBreakfast > 130 ? 'red' : 'black' }}>
+                                    <p>{averageData.preBreakfast} mg/dl</p>
+                                </div>
                             </div>
                             <div className="col s3">
                                 <h5>postBreakfast</h5>
-                                <p>{averageData.postBreakfast} mg/dl</p>
+                                <div style={{ color: averageData.postBreakfast > 130 ? 'red' : 'black' }}>
+                                    <p>{averageData.postBreakfast} mg/dl</p>
+                                </div>    
                             </div>
                             <div className="col s3">
                                 <h5>preLunch</h5>
-                                <p>{averageData.preLunch} mg/dl</p>
+                                <div style={{ color: averageData.preLunch > 130 ? 'red' : 'black' }}>
+                                    <p>{averageData.preLunch} mg/dl</p>
+                                </div>
                             </div>
                         </div>
                             <div className="row col s8">
                             <div className="col s3">
                                 <h5>postLunch</h5>
-                                <p>{averageData.postLunch} mg/dl</p>
+                                <div style={{ color: averageData.postLunch > 130 ? 'red' : 'black' }}>
+                                    <p>{averageData.postLunch} mg/dl</p>
+                                </div>    
                             </div>
                             <div className="col s3">
                                 <h5>preDinner</h5>
-                                <p>{averageData.preDinner} mg/dl</p>
+                                <div style={{ color: averageData.preDinner > 130 ? 'red' : 'black' }}>
+                                    <p>{averageData.preDinner} mg/dl</p>
+                                </div>
                             </div>
                             <div className="col s3">
                                 <h5>postDinner</h5>
-                                <p>{averageData.postDinner} mg/dl</p>
+                                <div style={{ color: averageData.postDinner > 130 ? 'red' : 'black' }}>
+                                    <p>{averageData.postDinner} mg/dl</p>
+                                </div>    
                             </div>
                             <div className="col s3">
                                 <h5>Night</h5>
-                                <p>{averageData.night} mg/dl</p>
+                                <div style={{ color: averageData.night > 130 ? 'red' : 'black' }}>
+                                    <p>{averageData.night} mg/dl</p>
+                                </div>    
                             </div>
                         </div>
                     </div>

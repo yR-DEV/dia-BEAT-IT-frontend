@@ -13,15 +13,15 @@ const mapStateToProps = (state) => {
 
 const ProfileContainer = ({ userDiabetesProfile }) => {
     return (
-        <div>
+        <div className="container">
             { !_.isEmpty(userDiabetesProfile) &&
                 <div className="card">
                     <div className="row">
-                        <div className="col s4">
+                        <div className="col s6">
                             <h3>{userDiabetesProfile[0].user.email}</h3>
                             <p>{userDiabetesProfile[0].personal_goal}</p>
                         </div>
-                        <div className="col s8">
+                        <div className="col s6">
                             <div className="row">
                                 <div className="col s2">
                                     <p>Target Range (low): </p>

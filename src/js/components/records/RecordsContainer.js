@@ -35,7 +35,7 @@ const RecordsContainer = ({ bloodSugarRecords }) => {
                         </tr>
                     </thead>
                     <tbody>
-                        {records}
+                        {records.reverse()}
                     </tbody>
                 </table>
                 <BSRecord />

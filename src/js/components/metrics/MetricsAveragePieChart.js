@@ -7,8 +7,6 @@ import MetricsAveragesSort from './js/MetricsAveragesSort';
 
 import { getBloodSugarRecords } from '../../actions/index';
 
-var _ = require("lodash")
-
 const mapStateToProps = (state) => {
     return { bloodSugarRecords: state.bloodSugarRecords }
 };

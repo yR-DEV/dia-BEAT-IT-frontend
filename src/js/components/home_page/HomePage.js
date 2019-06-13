@@ -11,7 +11,7 @@ const jumbotronStyle = {
 class HomePage extends Component {
   render() {
     return (
-      <div className="jumbotron-container">
+      <div className=" container jumbotron-container">
           <div className="card-panel grey lighten-2" style={jumbotronStyle}>
               <div className="container">
                   <h1>DIABETUS!</h1>

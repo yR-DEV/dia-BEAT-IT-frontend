@@ -5,9 +5,9 @@ const BloodSugarRecord = (props) => {
         <tr>
             <td>{props.record.record_date}</td>
             <td>{props.record.record_time}</td>
-            <td>{props.record.blood_sugar}</td>
-            <td>{props.record.carbs}</td>
-            <td>{props.record.insulin_units}</td>
+            <td>{props.record.blood_sugar} mg/dl</td>
+            <td>{props.record.carbs} g</td>
+            <td>{props.record.insulin_units} units</td>
         </tr>
     )
 }
