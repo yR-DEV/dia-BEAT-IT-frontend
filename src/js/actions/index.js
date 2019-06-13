@@ -6,7 +6,21 @@ const RECORD_API = "http://localhost:3000/api/v1/blood_sugar_records"
 const PROFILE_API = "http://localhost:3000/api/v1/diabetes_metrics"
 
 export function addBloodSugarRecord(payload) {
-    return { type: ADD_BLOOD_SUGAR_RECORD, payload }
+    // { type: ADD_BLOOD_SUGAR_RECORD, payload }
+    const newPayload = { ...payload, user_id: 1}
+    
+    return function(dispatch) {
+        return fetch(RECORD_API, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+                },
+            body: JSON.stringify({...payload, user_id: 1})
+        }).then(response => { 
+            dispatch({ type: ADD_BLOOD_SUGAR_RECORD, payload }) 
+        });
+    }
 };
 
 export function getBloodSugarRecords() {

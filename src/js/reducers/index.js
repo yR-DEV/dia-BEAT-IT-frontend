@@ -1,7 +1,6 @@
 import { ADD_BLOOD_SUGAR_RECORD,
          RECORD_DATA_LOADED,
          PROFILE_DATA_LOADED} from '../constants/action-types';
-// import { RECORD_DATA_LOADED } from '../constants/action-types';
 
 
 const initialState = {
@@ -22,7 +21,7 @@ const rootReducer = (state = initialState, action) => {
     }
     if (action.type === PROFILE_DATA_LOADED) {
         return Object.assign({}, state, {
-            userDiabetesProfile: state.userDiabetesProfile.concat(action.payload)
+            userDiabetesProfile: action.payload
         })
     }
     return state;

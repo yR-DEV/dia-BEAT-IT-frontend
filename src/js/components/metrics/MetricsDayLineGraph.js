@@ -2,9 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ResponsiveLine } from '@nivo/line';
 
+
 import MetricsDataDaySort from './js/MetricsDataDaySort';
 
 import { getBloodSugarRecords } from '../../actions/index';
+
+var _ = require('lodash');
 
 
 const mapStateToProps = (state) => {
@@ -13,10 +16,12 @@ const mapStateToProps = (state) => {
 
 const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
     const dayLineGraphData = MetricsDataDaySort.startDaySort(bloodSugarRecords);
+    console.log(dayLineGraphData);
+    
     return (
     <div className="card"> 
     <h2>Blood Sugars by Day</h2>
-        {dayLineGraphData.length > 0 && bloodSugarRecords.length > 0 &&
+        {!_.isEmpty(dayLineGraphData) && dayLineGraphData.length > 0 && bloodSugarRecords.length > 0 &&
           <div className="line-graph-container">
             <ResponsiveLine
                 data={dayLineGraphData}
@@ -80,8 +85,8 @@ const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
             />
         </div>
       }
-     p </div>
-        )
+     </div>
+    )
 }
 
 export default connect(

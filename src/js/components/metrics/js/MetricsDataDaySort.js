@@ -1,29 +1,9 @@
 const _ = require('lodash')
 
 export default {
-
-    dayDataLineGraph: [
-        {
-            "id": "",
-            "color": "hsl(337, 70%, 50%)",
-            "data": []
-        },
-        {
-            "id": "",
-            "color": "hsl(105, 70%, 50%)",
-            "data": []
-        },
-        {
-            "id": "",
-            "color": "hsl(310, 70%, 50%)",
-            "data": []
-        }
-    ],
-
     createPlotPoint(time, blood_sugar) {
         return { "x": time, "y": blood_sugar }
     },
-
 
     pushPlotPointsToObject(dayObj, bloodSugarRecords) {
         const daySortObject = dayObj;
@@ -38,11 +18,10 @@ export default {
     },
 
     returnDaySortObject(uniqueDayArray, bloodSugarRecords) {
-        const daySortObject = this.dayDataLineGraph;
-        uniqueDayArray.forEach((day, i) => {
-            return daySortObject[i].id = day;
+        const newSortArray = uniqueDayArray.map((day) => {
+            return {"id": day, "color": "hsl(310, 70%, 50%)", "data": []}
         })
-        return this.pushPlotPointsToObject(daySortObject, bloodSugarRecords)
+        return this.pushPlotPointsToObject(newSortArray, bloodSugarRecords)
     },
 
     createDaysArray(bloodSugarRecords) {
@@ -52,7 +31,11 @@ export default {
     },
 
     startDaySort(bloodSugarRecords) {
-        const uniqueDayArray = (_.uniqBy(this.createDaysArray(bloodSugarRecords)));
-        return this.returnDaySortObject(uniqueDayArray, bloodSugarRecords);
+        if (_.isEmpty(bloodSugarRecords)) {
+            console.log('nothing from the api yet');
+        } else {
+            const uniqueDayArray = (_.uniqBy(this.createDaysArray(bloodSugarRecords)));
+            return this.returnDaySortObject(uniqueDayArray, bloodSugarRecords);
+        }
     }   
 } 
