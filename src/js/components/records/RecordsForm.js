@@ -61,7 +61,7 @@ class ConnectRecordForm extends React.Component {
                                 <input name="insulin_units" placeholder="Insulin Units Here" type="number" onInput={this.handleChange}/>
                             </div>
                             <div className="input-field col s2">
-                                <label htmlFor="record_time">p</label>
+                                <label htmlFor="record_time"></label>
                                 <select name="record_time" onChange={this.handleChange}>
                                     <option value="" defaultValue>Time</option>
                                     <option value="morning">Morning</option>

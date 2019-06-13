@@ -12,7 +12,9 @@ const mapStateToProps = (state) => {
 };
 
 const RecordsContainer = ({ bloodSugarRecords }) => {
-    const records = bloodSugarRecords.map(record => {
+    let newRecords = []
+    newRecords = bloodSugarRecords;
+    let records = newRecords.map(record => {
         return <Record key={record.id} record={record} />
     });
 

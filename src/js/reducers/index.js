@@ -24,6 +24,8 @@ const rootReducer = (state = initialState, action) => {
             userDiabetesProfile: action.payload
         })
     }
+    // console.log(state);
+    
     return state;
 }
 

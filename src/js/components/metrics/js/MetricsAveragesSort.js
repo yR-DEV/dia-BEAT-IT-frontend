@@ -27,7 +27,7 @@ export default {
             } else {
                 return this.calculateAverageKeyValuePair(averagesObject, record.record_time, record.blood_sugar)
             }
-        })        
+        });      
         return newAveragesObject;
     },
 

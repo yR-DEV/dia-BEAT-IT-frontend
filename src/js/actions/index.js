@@ -39,7 +39,7 @@ export function getDiabetesProfile() {
             .then(response => response.json())
             .then(json => {
                 dispatch({ type: PROFILE_DATA_LOADED, payload: json })
-            });
+            }).catch(console.error)
     };
 };
 
