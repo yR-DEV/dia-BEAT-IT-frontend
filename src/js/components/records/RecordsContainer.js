@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import RecordsForm from './RecordsForm';
 import Record from './Record';
-import BSRecord from './BSRecord';
 
 import { getBloodSugarRecords } from '../../actions/index';
 
@@ -38,7 +37,7 @@ const RecordsContainer = ({ bloodSugarRecords }) => {
                         {records.reverse()}
                     </tbody>
                 </table>
-                <BSRecord />
+                {/* <BSRecord /> */}
             </div>    
         </div>
     )

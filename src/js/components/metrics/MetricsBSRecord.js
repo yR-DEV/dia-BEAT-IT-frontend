@@ -8,7 +8,7 @@ export class MetricsBSRecord extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getBloodSugarRecords();
+        // this.props.getBloodSugarRecords();
     }
 
     render() {

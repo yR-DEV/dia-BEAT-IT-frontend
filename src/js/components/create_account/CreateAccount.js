@@ -1,9 +1,41 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import uuidv1 from 'uuid';
+
+import { createLogin } from '../../actions/index';
 
 import './CreateAccount.css';
 
-export default class CreateAccount extends React.Component {
+function mapDispatchToProps(dispatch) {
+    return { createLogin: login => dispatch(createLogin(login)) };
+}
 
+export default class CreateAccount extends React.Component {
+    
+    constructor() {
+        super();
+        this.state = {
+            email: "",
+            username: "",
+            password: ""
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange = (event) => {
+        event.persist();
+        const { name, value } = event.target;
+        this.setState({ [name]: value });
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const id = uuidv1();
+        const { email, username, password } = this.state;
+        this.props.createLogin({ email, username, password });
+        this.setState({ email: '', username: '', password: '' });
+    }
 
     render() {
         return (
@@ -16,6 +48,7 @@ export default class CreateAccount extends React.Component {
                             </div>   
                         </div> 
                         <div className="create-form-input-container">
+                            <input placeholder="Email" type="email" required="" />
                             <input placeholder="Username" type="text" required="" />
                             <input placeholder="Password" type="password" required="" />
                             <div className="create-form-submit-btn">
