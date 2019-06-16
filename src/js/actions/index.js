@@ -36,7 +36,7 @@ export function createLogin(newUserParams) {
 export function editDiabetesProfile(payload) {
     return function(dispatch) {
         const token = localStorage.getItem("auth_token");
-        console.log(payload.user.id);
+        console.log(payload);
         
         return fetch(`${PROFILE_API}/${payload.user.id}`, {
             method: "PATCH",

@@ -26,15 +26,17 @@ export class ProfileContainer extends React.Component {
     render() {
         return (
             <div className="container">
-                { !this.state.isEditing &&
-                    <div className="container">
-                        <a className="waves-effect waves-light btn red accent-2" onClick={this.toggleEdit}>EDIT</a>
-                        <Profile />
-                    </div>
-                }
-                { this.state.isEditing &&
-                    <ProfileForm toggleEdit={this.toggleEdit}/>
-                }
+                <div className="card">
+                    { !this.state.isEditing &&
+                        <div className="container">
+                            <a className="waves-effect waves-light btn red accent-2" onClick={this.toggleEdit}>EDIT</a>
+                            <Profile />
+                        </div>
+                    }
+                    { this.state.isEditing &&
+                        <ProfileForm toggleEdit={this.toggleEdit}/>
+                    }
+                </div>
             </div>
         )
     }

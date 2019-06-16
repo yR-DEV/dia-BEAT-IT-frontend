@@ -45,7 +45,7 @@ export class Login extends React.Component {
                 <div className="card">
                     <form>
                         <div className="row">
-                            <div className="red accent-2 header-login-form-container">
+                            <div className="green accent-4 header-login-form-container">
                             <h1 className="white-text">Login</h1>
                             </div>   
                         </div> 
@@ -54,7 +54,7 @@ export class Login extends React.Component {
                             <input placeholder="Email" name="email" type="text" required="" onChange={this.handleChange} />
                             <input placeholder="Password" name="password" type="password" required="" onChange={this.handleChange} />
                             <div className="login-form-submit-btn">
-                                <button className=" btn red accent-2" onClick={this.handleSubmit}>Submit</button>
+                                <button className=" btn green accent-4" onClick={this.handleSubmit}>Submit</button>
                             </div>
                         </div>    
                     </form>

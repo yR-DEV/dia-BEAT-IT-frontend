@@ -43,7 +43,7 @@ export default class CreateAccount extends React.Component {
                 <div className="card">
                     <form>
                         <div className="row">
-                            <div className="red accent-2 header-create-form-container">
+                            <div className="green accent-4 header-create-form-container">
                                 <h1 className="white-text">Create Account</h1>
                             </div>   
                         </div> 
@@ -52,7 +52,7 @@ export default class CreateAccount extends React.Component {
                             <input placeholder="Username" type="text" required="" />
                             <input placeholder="Password" type="password" required="" />
                             <div className="create-form-submit-btn">
-                                <button className=" btn red accent-2">Submit</button>
+                                <button className=" btn green accent-4">Submit</button>
                             </div>
                         </div>    
                     </form>

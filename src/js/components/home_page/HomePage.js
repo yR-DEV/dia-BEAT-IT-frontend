@@ -20,11 +20,11 @@ class HomePage extends Component {
                   <div className="container login-btn-container">
                       <div className="row">
                         <br></br>
-                          <Link to="/login" className="waves-effect waves-light btn-large red accent-2 root-url-btn">Login</Link>
+                          <Link to="/login" className="waves-effect waves-light btn-large green accent-4 root-url-btn">Login</Link>
                       </div>
                       <div className="row">
                         <br></br>
-                          <Link to="/create-account" className="waves-effect waves-light btn-large red accent-2 root-url-btn">Create Account</Link>
+                          <Link to="/create-account" className="waves-effect waves-light btn-large green accent-4 root-url-btn">Create Account</Link>
                       </div>
                   </div>
               </div>

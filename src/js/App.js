@@ -2,13 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Nav from './components/navigation/Nav';
+import BetesNav from './components/navigation/Nav';
 import RecordsContainer from './components/records/RecordsContainer';
 import HomePage from './components/home_page/HomePage';
 import ProfileContainer from './components/profile/ProfileContainer';
 import Login from './components/login/Login';
 import CreateAccount from './components/create_account/CreateAccount';
 import MetricsContainer from './components/metrics/MetricsContainer';
+
+
+
 
 import './App.css';
 import { getBloodSugarRecords, getDiabetesProfile } from './actions';
@@ -33,7 +36,7 @@ class App extends React.Component {
                 />
             { this.props.state.loggedIn && 
               <div>
-              <Nav />
+              <BetesNav />
                 <Route path="/records" 
                   render={() => (
                     <RecordsContainer />

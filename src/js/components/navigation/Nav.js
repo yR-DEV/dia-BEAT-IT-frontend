@@ -6,7 +6,7 @@ const Nav = () => {
     return (
         <div className="nav-container">
             <nav>
-                <div className="nav-wrapper red accent-2">
+                <div className="nav-wrapper green accent-4">
                 <a className="brand-logo left"></a>
                 <a data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                 <ul className="right hide-on-med-and-down">

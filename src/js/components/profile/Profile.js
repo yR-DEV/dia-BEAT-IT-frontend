@@ -12,7 +12,7 @@ const Profile = ({ userDiabetesProfile }) => {
         return (
             <div className="">
             { !_.isEmpty(userDiabetesProfile) &&
-                <div className="card">
+                <div className="">
                         <div className="row">
                             <h3>{userDiabetesProfile[0].user.email}</h3>
                             <p>{userDiabetesProfile[0].personal_goal}</p>
