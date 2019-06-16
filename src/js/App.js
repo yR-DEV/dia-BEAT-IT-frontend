@@ -37,6 +37,7 @@ class App extends React.Component {
             { this.props.state.loggedIn && 
               <div>
               <BetesNav />
+              <div className="main-container">
                 <Route path="/records" 
                   render={() => (
                     <RecordsContainer />
@@ -52,6 +53,7 @@ class App extends React.Component {
                     <MetricsContainer />
                   )}
                 />
+              </div>
               </div>
             }
            { !this.props.state.loggedIn &&

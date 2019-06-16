@@ -17,15 +17,17 @@ const mapStateToProps = (state) => {
 const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
     const dayLineGraphData = MetricsDataDaySort.startDaySort(bloodSugarRecords);
     return (
-        <div className="card"> 
+        <div className="card ui-interface-backgrounds white-text"> 
         <h2>Blood Sugars by Day</h2>
             {!_.isEmpty(dayLineGraphData) && dayLineGraphData.length > 0 && bloodSugarRecords.length > 0 &&
-            <div className="line-graph-container">
-                <ResponsiveLine
+            <div className="line-graph-container ui-interface-backgrounds white-text">
+                <ResponsiveLine className="white-text"
                     data={dayLineGraphData}
                     margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
                     xScale={{ type: 'point' }}
                     yScale={{ type: 'linear', stacked: false, min: 'auto', max: 'auto' }}
+                    curve="linear"
+                    lineWidth={4}
                     axisTop={null}
                     axisRight={null}
                     axisBottom={{
@@ -35,7 +37,7 @@ const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
                         tickRotation: 0,
                         legend: 'Time of Day',
                         legendOffset: 36,
-                        legendPosition: 'middle'
+                        legendPosition: 'middle',
                     }}
                     axisLeft={{
                         orient: 'left',
@@ -44,14 +46,25 @@ const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
                         tickRotation: 0,
                         legend: 'Blood Sugar mg/dl',
                         legendOffset: -40,
-                        legendPosition: 'middle'
+                        legendPosition: 'middle',
+                        textFill: '#ffffff'
                     }}
-                    colors={{ scheme: 'dark2' }}
+                    animate={true}
+                    theme={{  
+                        textColor: '#ffffff',
+                        tooltip: {
+                            container: {
+                                background: '#222'
+                            }
+                        }
+                    }}
+                    colors={{ scheme: 'set1' }}
                     pointSize={10}
                     pointColor={{ theme: 'background' }}
                     pointBorderWidth={2}
                     pointBorderColor={{ from: 'serieColor' }}
-                    pointLabel="y"
+                    pointLabel="x"
+                    tooltipFormat
                     pointLabelYOffset={-12}
                     useMesh={true}
                     legends={[
@@ -66,6 +79,7 @@ const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
                             itemWidth: 80,
                             itemHeight: 20,
                             itemOpacity: 0.75,
+                            itemTextColor: '#ffffff',
                             symbolSize: 12,
                             symbolShape: 'circle',
                             symbolBorderColor: 'rgba(0, 0, 0, .5)',
@@ -73,7 +87,7 @@ const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
                                 {
                                     on: 'hover',
                                     style: {
-                                        itemBackground: 'rgba(0, 0, 0, .03)',
+                                        itemBackground: '#222222',
                                         itemOpacity: 1
                                     }
                                 }

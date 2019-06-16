@@ -1,5 +1,7 @@
 .create-form-container {
     width: 500px;
+    margin: 0 auto;
+    background-color: #444444;
 }
 
 .header-create-form-container {

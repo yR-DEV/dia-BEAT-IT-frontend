@@ -41,8 +41,8 @@ export class Login extends React.Component {
 
     render() {
         return (
-            <div className="container login-form-container">
-                <div className="card">
+            <div className="container">
+                <div className="card login-form-container">
                     <form>
                         <div className="row">
                             <div className="green accent-4 header-login-form-container">

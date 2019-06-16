@@ -9,7 +9,7 @@ var jwtDecode = require('jwt-decode');
 const initialState = {
     bloodSugarRecords: [],
     userDiabetesProfile: [],
-    loggedIn: false,
+    loggedIn: true,
     userId: 2
 }
 

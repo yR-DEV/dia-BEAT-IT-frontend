@@ -26,11 +26,17 @@ export class ProfileContainer extends React.Component {
     render() {
         return (
             <div className="container">
-                <div className="card">
+                <div className="card ui-interface-backgrounds white-text">
                     { !this.state.isEditing &&
                         <div className="container">
-                            <a className="waves-effect waves-light btn red accent-2" onClick={this.toggleEdit}>EDIT</a>
-                            <Profile />
+                            <br></br>
+                            <br></br>
+                            <a className="waves-effect waves-light btn green accent-4" onClick={this.toggleEdit}>EDIT</a>
+                            <div className="container">
+                                <Profile />
+                                <br></br>
+                                <br></br>
+                            </div>
                         </div>
                     }
                     { this.state.isEditing &&

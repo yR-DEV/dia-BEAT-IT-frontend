@@ -33,6 +33,10 @@ export function createLogin(newUserParams) {
 
 }
 
+export function userLogout() {
+    
+}
+
 export function editDiabetesProfile(payload) {
     return function(dispatch) {
         const token = localStorage.getItem("auth_token");

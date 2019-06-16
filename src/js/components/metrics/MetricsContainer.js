@@ -16,15 +16,17 @@ const mapStateToProps = (state) => {
 const MetricsContainer = ({ bloodSugarRecords }) => {
     return (
       <div className="container"> 
-        <div className="card">
+        <div className="card ui-interface-backgrounds white-text">
           <MetricsAverages 
           />    
         </div>
         <div className="card">
-          <MetricsAveragePieChart 
-          />
+          <div className="card ui-interface-backgrounds white-text">
+            <MetricsAveragePieChart 
+            />
+          </div>
         </div>
-        <div className="card">
+        <div className="card ui-interface-backgrounds white-text">
           <MetricsDayLineGraph 
           />
         </div>
@@ -33,7 +35,7 @@ const MetricsContainer = ({ bloodSugarRecords }) => {
             averagesObject={this.state.averagesObject}
           />
         </div> */}
-        <MetricsBSRecord />
+        {/* <MetricsBSRecord /> */}
       </div>
 
     )

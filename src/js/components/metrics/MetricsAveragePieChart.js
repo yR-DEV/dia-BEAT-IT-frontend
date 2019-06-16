@@ -22,6 +22,14 @@ const MetricsAveragePieChart = ({ bloodSugarRecords }) => {
                 data={averagesObj}
                 margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
                 innerRadius={0.5}
+                theme={{  
+                    textColor: '#ffffff',
+                    tooltip: {
+                        container: {
+                            background: '#222'
+                        }
+                    }
+                }}
                 padAngle={0.7}
                 cornerRadius={3}
                 colors={{ scheme: 'paired' }}
@@ -29,14 +37,14 @@ const MetricsAveragePieChart = ({ bloodSugarRecords }) => {
                 borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
                 radialLabelsSkipAngle={10}
                 radialLabelsTextXOffset={6}
-                radialLabelsTextColor="#333333"
+                radialLabelsTextColor="#ffffff"
                 radialLabelsLinkOffset={0}
                 radialLabelsLinkDiagonalLength={16}
                 radialLabelsLinkHorizontalLength={24}
                 radialLabelsLinkStrokeWidth={1}
                 radialLabelsLinkColor={{ from: 'color' }}
                 slicesLabelsSkipAngle={10}
-                slicesLabelsTextColor="#333333"
+                slicesLabelsTextColor="#ffffff"
                 animate={true}
                 motionStiffness={90}
                 motionDamping={15}
@@ -117,7 +125,7 @@ const MetricsAveragePieChart = ({ bloodSugarRecords }) => {
                         translateY: 56,
                         itemWidth: 100,
                         itemHeight: 18,
-                        itemTextColor: '#999',
+                        itemTextColor: '#ffffff',
                         symbolSize: 18,
                         symbolShape: 'circle',
                         effects: [

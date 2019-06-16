@@ -17,16 +17,16 @@ const RecordsContainer = ({ bloodSugarRecords }) => {
 
     return (
         <div className="container">
-            <div className="card records-container"> 
+            <div className="card records-container ui-interface-backgrounds"> 
                 <RecordsForm />
                 <table>
                     <thead>
                         <tr>
-                            <th>Date Submitted:</th>
-                            <th>Time Submitted:</th>
-                            <th>Blood Sugar:</th>
-                            <th>Carbs Eaten:</th>
-                            <th>Insulin Taken:</th>
+                            <th className="white-text">Date Submitted:</th>
+                            <th className="white-text">Time Submitted:</th>
+                            <th className="white-text">Blood Sugar:</th>
+                            <th className="white-text">Carbs Eaten:</th>
+                            <th className="white-text">Insulin Taken:</th>
                         </tr>
                     </thead>
                     <tbody>
