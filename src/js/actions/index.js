@@ -44,8 +44,6 @@ export function userLogout() {
 export function editDiabetesProfile(payload) {
     return function(dispatch) {
         const token = localStorage.getItem("auth_token");
-        console.log(payload);
-        
         return fetch(`${PROFILE_API}/${payload.user.id}`, {
             method: "PATCH",
             headers: {
@@ -53,6 +51,7 @@ export function editDiabetesProfile(payload) {
                 "Accept": "application/json",
                 "Authorization": token,
             },
+            body: JSON.stringify(payload)
         }).then(response => {
             dispatch({ type: EDIT_DIABETES_PROFILE, payload })
         }).catch(console.error);
@@ -63,8 +62,6 @@ export function editDiabetesProfile(payload) {
 export function addBloodSugarRecord(payload) {    
     return function(dispatch) {
         const token = localStorage.getItem("auth_token");
-        console.log(token);
-        
         return fetch(RECORD_API, {
             method: "POST",
             headers: {
@@ -82,7 +79,7 @@ export function addBloodSugarRecord(payload) {
 export function getBloodSugarRecords(userId) {
     return function(dispatch) {
         const token = localStorage.getItem("auth_token");
-        return fetch(RECORD_API, {
+        return fetch(`${RECORD_API}/${userId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -93,30 +90,13 @@ export function getBloodSugarRecords(userId) {
             .then(res => res.json())
             .then(json => {
                 dispatch({ type: RECORD_DATA_LOADED, payload: json })
-            }).catch(console.error)
-
-        // return fetch(RECORD_API, {
-        //     method: "GET",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         "Accept": "application/json",
-        //         // "Authorization": token,
-        //         },
-        // }).then(response => {
-            
-        //     response.json()
-        // }).then(json => {
-        //     console.log(json) 
-        //         // dispatch({ type: RECORD_DATA_LOADED, payload: json }); 
-        // }).catch(console.error)
+            }).then(something => getDiabetesProfile(userId))
     };
 };
 
-export function getDiabetesProfile(userId) {
+export function getDiabetesProfile(userId) {  
     return function(dispatch) {
         const token = localStorage.getItem("auth_token");
-        console.log(dispatch);
-        
         return fetch(`${PROFILE_API}/${userId}`, {
             method: "GET",
             headers: {

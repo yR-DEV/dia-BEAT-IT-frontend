@@ -10,8 +10,8 @@ var jwtDecode = require('jwt-decode');
 const initialState = {
     bloodSugarRecords: [],
     userDiabetesProfile: [],
-    loggedIn: true,
-    userId: 3
+    loggedIn: false,
+    userId: 0
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -26,15 +26,15 @@ const rootReducer = (state = initialState, action) => {
         })
     }
     if (action.type === PROFILE_DATA_LOADED) {
-        return Object.assign({}, state, {
-            userDiabetesProfile: state.userDiabetesProfile.concat(action.payload)
-        })
+        if(action.payload !== null) {
+            return Object.assign({}, state, {
+                userDiabetesProfile: action.payload
+            })
+        }
     }
     if (action.type === EDIT_DIABETES_PROFILE) {
-        console.log(action);
-        
         return Object.assign({} , state, {
-            userDiabetesProfile: state.userDiabetesProfile.concat(action.payload)
+            userDiabetesProfile: action.payload
         })
     }
     if(action.type === USER_LOGIN) {
@@ -52,8 +52,6 @@ const rootReducer = (state = initialState, action) => {
             userId: 0
         });
     }
-    console.log(state);
-    
     return state;
 }
 

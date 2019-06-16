@@ -14,45 +14,45 @@ const Profile = ({ userDiabetesProfile }) => {
             { !_.isEmpty(userDiabetesProfile) &&
                 <div className="">
                         <div className="row">
-                            <h3>{userDiabetesProfile[0].user.email}</h3>
-                            <p>{userDiabetesProfile[0].personal_goal}</p>
+                            <h3>{userDiabetesProfile.user.email}</h3>
+                            <p>{userDiabetesProfile.personal_goal}</p>
                         </div>
                         <div className="row">
                                 <div className="col s4">
                                     <p>Morning Insulin/Carb Ratio: </p>
-                                    <p>{userDiabetesProfile[0].morning_insulin_to_carb_ratio} carbs/unit</p>
+                                    <p>{userDiabetesProfile.morning_insulin_to_carb_ratio} carbs/unit</p>
                                 </div>
                                 <div className="col s4">
                                     <p>Afternoon Insulin/Carb Ratio: </p>
-                                    <p>{userDiabetesProfile[0].night_insulin_to_carb_ratio} carbs/unit</p>
+                                    <p>{userDiabetesProfile.night_insulin_to_carb_ratio} carbs/unit</p>
                                 </div>
                                 <div className="col s4">
                                     <p>Lantus Units:</p>
-                                    <p>{userDiabetesProfile[0].lantus_units}</p>
+                                    <p>{userDiabetesProfile.lantus_units}</p>
                                 </div>
                         </div>
                         <div className="row">
                                 <div className="col s4">
                                     <p>Target Range (low): </p>
-                                    <p>{userDiabetesProfile[0].blood_sugar_target_low}</p>
+                                    <p>{userDiabetesProfile.blood_sugar_target_low}</p>
                                 </div>
                                 <div className="col s4">
                                     <p>Target Range (high):</p>
-                                    <p>{userDiabetesProfile[0].blood_sugar_target_high}</p>
+                                    <p>{userDiabetesProfile.blood_sugar_target_high}</p>
                                 </div>
                                 <div className="col s4">
                                     <p>A1C Goal: </p>
-                                    <p>{userDiabetesProfile[0].a1c_goal}</p>
+                                    <p>{userDiabetesProfile.a1c_goal}</p>
                                 </div>
                         </div>
                         <div className="row">        
                                 <div className="col s4">
                                     <p>Height: </p>
-                                    <p>{userDiabetesProfile[0].height}</p>
+                                    <p>{userDiabetesProfile.height}</p>
                                 </div>
                                 <div className="col s4">
                                     <p>Weight:</p>
-                                    <p>{userDiabetesProfile[0].weight}</p>
+                                    <p>{userDiabetesProfile.weight}</p>
 
                                 </div>
                                 <div className="col s4">

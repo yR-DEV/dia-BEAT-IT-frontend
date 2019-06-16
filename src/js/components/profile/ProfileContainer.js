@@ -23,6 +23,8 @@ export class ProfileContainer extends React.Component {
 
     componentDidMount = () => {
         this.props.getDiabetesProfile(this.props.userId);
+        // console.log(this.props);
+        
     }
 
     toggleEdit = (event) => {
@@ -33,7 +35,7 @@ export class ProfileContainer extends React.Component {
         return (
             <div className="container">
                 <div className="card ui-interface-backgrounds white-text">
-                    { !this.state.isEditing &&
+                    { !this.state.isEditing && this.props.userDiabetesProfile &&
                         <div className="container">
                             <br></br>
                             <br></br>

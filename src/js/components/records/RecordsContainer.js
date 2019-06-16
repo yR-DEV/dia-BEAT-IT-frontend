@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import RecordsForm from './RecordsForm';
 import Record from './Record';
 
-import { getBloodSugarRecords } from '../../actions/index';
+import { getBloodSugarRecords, getDiabetesProfile } from '../../actions/index';
 
 const mapStateToProps = (state) => {
     return { bloodSugarRecords: state.bloodSugarRecords, userId: state.userId }
@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
 class RecordsContainer extends React.Component {
     
     componentDidMount() {
-        this.props.getBloodSugarRecords(this.props.userId);
+        const { userId } = this.props;
+        this.props.getBloodSugarRecords(userId);
     }
 
     render() {
@@ -47,5 +48,5 @@ class RecordsContainer extends React.Component {
 
 export default connect(
     mapStateToProps,
-    { getBloodSugarRecords }
+    { getBloodSugarRecords, getDiabetesProfile }
 ) (RecordsContainer)
