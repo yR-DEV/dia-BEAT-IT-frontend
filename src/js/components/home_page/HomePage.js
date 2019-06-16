@@ -5,14 +5,16 @@ import { Redirect } from 'react-router-dom';
 
 const jumbotronStyle = {
   paddingBottom: '150px',
-  boxShadow: "0px 0px 0px 0px rgba(0,0,0,0)"
+  boxShadow: "0px 0px 0px 0px rgba(0,0,0,0)",
+  marginTop: "50px",
+  marginBottom: "50px"
 }
 
 class HomePage extends Component {
   render() {
     return (
       <div className=" container jumbotron-container">
-          <div className="card-panel grey lighten-2" style={jumbotronStyle}>
+          <div className="card-panel  ui-interface-backgrounds" style={jumbotronStyle}>
               <div className="container">
                   <h1>DIABETUS!</h1>
                   <h3>Let's Dia Beat This</h3>

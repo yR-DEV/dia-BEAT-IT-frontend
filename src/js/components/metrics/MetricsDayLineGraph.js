@@ -64,7 +64,6 @@ const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
                     pointBorderWidth={2}
                     pointBorderColor={{ from: 'serieColor' }}
                     pointLabel="x"
-                    tooltipFormat
                     pointLabelYOffset={-12}
                     useMesh={true}
                     legends={[

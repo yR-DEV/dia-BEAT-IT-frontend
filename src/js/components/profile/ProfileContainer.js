@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import Profile from './Profile';
 import ProfileForm from './ProfileForm';
 
+import { getDiabetesProfile } from '../../actions/index';
+
 var _ =  require('lodash');
 
 const mapStateToProps = (state) => {
-    return { userDiabetesProfile: state.userDiabetesProfile }
+    return { userDiabetesProfile: state.userDiabetesProfile, userId: state.userId }
 };
 
 export class ProfileContainer extends React.Component {
@@ -17,6 +19,10 @@ export class ProfileContainer extends React.Component {
             isEditing: false,
         };
         this.toggleEdit = this.toggleEdit.bind(this);
+    }
+
+    componentDidMount = () => {
+        this.props.getDiabetesProfile(this.props.userId);
     }
 
     toggleEdit = (event) => {
@@ -52,5 +58,5 @@ export class ProfileContainer extends React.Component {
 
 export default connect (
     mapStateToProps,
-    null
+    { getDiabetesProfile }
 ) (ProfileContainer);

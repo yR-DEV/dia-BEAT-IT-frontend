@@ -21,7 +21,7 @@ const mapStateToProps = (state) => ({ state });
 class App extends React.Component {
 
   componentDidMount = () => {
-    this.props.getBloodSugarRecords();
+    // this.props.getBloodSugarRecords();
     this.props.getDiabetesProfile();
   }
 

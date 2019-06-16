@@ -2,7 +2,8 @@ import { ADD_BLOOD_SUGAR_RECORD,
          RECORD_DATA_LOADED,
          PROFILE_DATA_LOADED,
          USER_LOGIN,
-         EDIT_DIABETES_PROFILE} from '../constants/action-types'; 
+         EDIT_DIABETES_PROFILE,
+         USER_LOGOUT} from '../constants/action-types'; 
          
 var jwtDecode = require('jwt-decode');       
 
@@ -10,7 +11,7 @@ const initialState = {
     bloodSugarRecords: [],
     userDiabetesProfile: [],
     loggedIn: true,
-    userId: 2
+    userId: 3
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -44,6 +45,12 @@ const rootReducer = (state = initialState, action) => {
                 userId: tokenDecoded.user_id
             });
         }
+    }
+    if (action.type === USER_LOGOUT) {
+        return Object.assign({}, state, {
+            loggedIn: false,
+            userId: 0
+        });
     }
     console.log(state);
     

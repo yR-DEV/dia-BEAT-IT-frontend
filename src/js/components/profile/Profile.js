@@ -57,7 +57,6 @@ const Profile = ({ userDiabetesProfile }) => {
                                 </div>
                                 <div className="col s4">
                                     <p>:</p>
-                                    {/* <p>{userDiabetesProfile[0].weight}</p> */}
 
                                 </div>
                         </div>

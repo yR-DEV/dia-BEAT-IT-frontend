@@ -43,7 +43,7 @@ export class Login extends React.Component {
         return (
             <div className="container">
                 <div className="card login-form-container">
-                    <form>
+                    {/* <form> */}
                         <div className="row">
                             <div className="green accent-4 header-login-form-container">
                             <h1 className="white-text">Login</h1>
@@ -51,13 +51,20 @@ export class Login extends React.Component {
                         </div> 
                         <div className="login-form-input-container">
                             {/* <input placeholder="Username" name="username" type="text" required="" /> */}
-                            <input placeholder="Email" name="email" type="text" required="" onChange={this.handleChange} />
-                            <input placeholder="Password" name="password" type="password" required="" onChange={this.handleChange} />
+                            <input className="white-text" placeholder="Email" name="email" type="text" required="" onChange={this.handleChange} />
+                            <input className="white-text" placeholder="Password" name="password" type="password" required="" onChange={this.handleChange} />
                             <div className="login-form-submit-btn">
-                                <button className=" btn green accent-4" onClick={this.handleSubmit}>Submit</button>
+                                <div className="row">
+                                    <div className="col s6">
+                                        <button className=" btn green accent-4" onClick={this.handleSubmit}>Submit</button>
+                                    </div>
+                                    <div className="col s6">
+                                    <button  className="waves-effect waves-light btn green accent-4 root-url-btn"><Link to="/">Home</Link></button>
+                                    </div>
+                                </div>
                             </div>
                         </div>    
-                    </form>
+                    {/* </form> */}
                 </div>    
             </div>  
         )

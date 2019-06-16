@@ -18,7 +18,7 @@ const Nav = () => {
                     <li><Link to="/metrics">Metrics</Link></li>
                     <li><Link to="/login">Login</Link></li>
                     {/* <div className="logout-btn-container"> */}
-                        <button className=" btn grey logout-btn">Signout</button>
+                        <button className="btn grey logout-btn">Signout</button>
                     {/* </div> */}
                 </ul>
                 </div>

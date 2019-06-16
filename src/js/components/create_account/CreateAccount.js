@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import uuidv1 from 'uuid';
 
@@ -42,21 +43,28 @@ export default class CreateAccount extends React.Component {
             <div className="container">
                 <div className=" card">
                     <div className="create-form-container">
-                        <form>
+                        {/* <form> */}
                             <div className="row">
                                 <div className="green accent-4 header-create-form-container">
                                     <h1 className="white-text">Create Account</h1>
                                 </div>   
                             </div> 
                             <div className="create-form-input-container">
-                                <input placeholder="Email" type="email" required="" />
-                                <input placeholder="Username" type="text" required="" />
-                                <input placeholder="Password" type="password" required="" />
+                                <input className="white-text" placeholder="Email" type="email" required="" />
+                                <input className="white-text" placeholder="Username" type="text" required="" />
+                                <input className="white-text" placeholder="Password" type="password" required="" />
                                 <div className="create-form-submit-btn">
-                                    <button className=" btn green accent-4">Submit</button>
+                                    <div className="row">
+                                        <div className="col s6">
+                                            <button className=" btn green accent-4">Submit</button>
+                                        </div>
+                                        <div className="col s6">
+                                            <Link to="/" className="waves-effect waves-light btn-large green accent-4 root-url-btn">Home</Link>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>    
-                        </form>
+                        {/* </form> */}
                     </div>    
                 </div>
             </div> 
