@@ -1,16 +1,16 @@
 import { ADD_BLOOD_SUGAR_RECORD,
          RECORD_DATA_LOADED,
          PROFILE_DATA_LOADED,
-         USER_LOGIN} from '../constants/action-types'; 
-import App from '../App';         
+         USER_LOGIN,
+         EDIT_DIABETES_PROFILE} from '../constants/action-types'; 
          
 var jwtDecode = require('jwt-decode');       
 
 const initialState = {
     bloodSugarRecords: [],
     userDiabetesProfile: [],
-    loggedIn: false,
-    userId: 0
+    loggedIn: true,
+    userId: 2
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -26,7 +26,14 @@ const rootReducer = (state = initialState, action) => {
     }
     if (action.type === PROFILE_DATA_LOADED) {
         return Object.assign({}, state, {
-            userDiabetesProfile: action.payload
+            userDiabetesProfile: state.userDiabetesProfile.concat(action.payload)
+        })
+    }
+    if (action.type === EDIT_DIABETES_PROFILE) {
+        console.log(action);
+        
+        return Object.assign({} , state, {
+            userDiabetesProfile: state.userDiabetesProfile.concat(action.payload)
         })
     }
     if(action.type === USER_LOGIN) {

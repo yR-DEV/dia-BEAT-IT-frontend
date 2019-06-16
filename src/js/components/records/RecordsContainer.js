@@ -11,18 +11,14 @@ const mapStateToProps = (state) => {
 };
 
 const RecordsContainer = ({ bloodSugarRecords }) => {
-    let newRecords = []
-    newRecords = bloodSugarRecords;
-    let records = newRecords.map(record => {
+    let records = bloodSugarRecords.map(record => {
         return <Record key={record.id} record={record} />
     });
 
     return (
         <div className="container">
             <div className="card records-container"> 
-                <RecordsForm 
-
-                />
+                <RecordsForm />
                 <table>
                     <thead>
                         <tr>
@@ -37,7 +33,6 @@ const RecordsContainer = ({ bloodSugarRecords }) => {
                         {records.reverse()}
                     </tbody>
                 </table>
-                {/* <BSRecord /> */}
             </div>    
         </div>
     )
@@ -47,6 +42,3 @@ export default connect(
     mapStateToProps,
     { getBloodSugarRecords }
 ) (RecordsContainer)
-
-// const RecordsContainerConnected = connect(mapStateToProps)(RecordsContainer);
-// export default RecordsContainerConnected;

@@ -11,22 +11,16 @@ import CreateAccount from './components/create_account/CreateAccount';
 import MetricsContainer from './components/metrics/MetricsContainer';
 
 import './App.css';
-import { getBloodSugarRecords } from './actions';
+import { getBloodSugarRecords, getDiabetesProfile } from './actions';
 
 const mapStateToProps = (state) => ({ state });
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     userId: 0,
-  //     loggedIn: false
-  //   }
-  // }
-  
-  componentDidMount() {
-        // this.props.getBloodSugarRecords();
-    }
+
+  componentDidMount = () => {
+    this.props.getBloodSugarRecords();
+    this.props.getDiabetesProfile();
+  }
 
   render() {
     return (
@@ -77,4 +71,4 @@ class App extends React.Component {
   }
 }
 
-export default connect( mapStateToProps, getBloodSugarRecords)(App)
+export default connect( mapStateToProps, { getBloodSugarRecords, getDiabetesProfile })(App)

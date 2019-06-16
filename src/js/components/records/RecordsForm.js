@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import uuidv1 from 'uuid';
 import { addBloodSugarRecord } from '../../actions/index';
+import M from 'materialize-css';
 
 function mapDispatchToProps(dispatch) {
     return { addBloodSugarRecord: record => dispatch(addBloodSugarRecord(record)) };
@@ -26,6 +27,12 @@ class ConnectRecordForm extends React.Component {
         const { name, value } = event.target;
         this.setState({ [name]: value });
     };
+
+    componentDidMount = () => {
+        let elems = document.querySelectorAll('select');
+        M.AutoInit();
+        let instances = M.FormSelect.init(elems);
+    }
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -89,6 +96,6 @@ class ConnectRecordForm extends React.Component {
     }
 }
 
-const RecordForm = connect(null, mapDispatchToProps) (ConnectRecordForm);
+export default connect(null, mapDispatchToProps) (ConnectRecordForm);
 
-export default RecordForm;
+// export default RecordForm;
