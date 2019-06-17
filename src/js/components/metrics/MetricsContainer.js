@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import MetricsAverages from './MetricsAverages';
 import MetricsDayLineGraph from './MetricsDayLineGraph';
 import MetricsAveragePieChart from './MetricsAveragePieChart';
-import MetricsInsulinAveragePieChart from './MetricsInsulinAveragePieChart';
-import MetricsBSRecord from './MetricsBSRecord';
+// import MetricsInsulinAveragePieChart from './MetricsInsulinAveragePieChart';
 
 import { getBloodSugarRecords } from '../../actions/index';
 

@@ -1,11 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import uuidv1 from 'uuid';
-import { addBloodSugarRecord } from '../../actions/index';
+import { addBloodSugarRecord, getBloodSugarRecords } from '../../actions/index';
 import M from 'materialize-css';
 
-function mapDispatchToProps(dispatch) {
-    return { addBloodSugarRecord: record => dispatch(addBloodSugarRecord(record)) };
+// function mapDispatchToProps(dispatch) {
+//     return { addBloodSugarRecord: record => dispatch(addBloodSugarRecord(record)),
+//      };
+// }
+
+const mapStateToProps = (state) => {
+    return { bloodSugarAverages: state.bloodSugarAverages, userId: state.userId }
 }
 
 class ConnectRecordForm extends React.Component {
@@ -38,7 +43,9 @@ class ConnectRecordForm extends React.Component {
         event.preventDefault();
         const { blood_sugar, carbs, insulin_units, record_time, record_date } = this.state;
         const id = uuidv1();
-        this.props.addBloodSugarRecord({ blood_sugar, carbs, insulin_units, record_time, record_date, id });
+        this.props.addBloodSugarRecord({ 
+            blood_sugar, carbs, insulin_units, record_time, record_date, id 
+        }).then(res => this.props.getBloodSugarRecords(this.props.userId))
         this.setState({
             id: 0,
             blood_sugar: 0,
@@ -81,7 +88,7 @@ class ConnectRecordForm extends React.Component {
                                     <option value="night">Night</option>
                                 </select>
                             </div>
-                            <div className="input-field col s2">
+                            <div className="input-field col s2 ui-interface-backgrounds">
                                 <label htmlFor="record_date"></label>
                                 <input name="record_date" className="white-text" type="text" placeholder="Date mm/dd/yyyy" onInput={this.handleChange}/>
                             </div>
@@ -96,6 +103,6 @@ class ConnectRecordForm extends React.Component {
     }
 }
 
-export default connect(null, mapDispatchToProps) (ConnectRecordForm);
+export default connect(mapStateToProps, {addBloodSugarRecord, getBloodSugarRecords}) (ConnectRecordForm);
 
 // export default RecordForm;

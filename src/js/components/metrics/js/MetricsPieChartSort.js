@@ -85,7 +85,7 @@ export default {
     },
 
     startSort(averagesData) {
-        if (_.isEmpty(averagesData)) {
+        if (_.isEmpty(averagesData) || !averagesData || averagesData === undefined) {
             return "undefined";
         } else {
             return this.createPieChartEntry(averagesData);

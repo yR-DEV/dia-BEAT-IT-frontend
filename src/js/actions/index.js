@@ -90,7 +90,7 @@ export function getBloodSugarRecords(userId) {
             .then(res => res.json())
             .then(json => {
                 dispatch({ type: RECORD_DATA_LOADED, payload: json })
-            }).then(something => getDiabetesProfile(userId))
+            }).catch(console.error)
     };
 };
 

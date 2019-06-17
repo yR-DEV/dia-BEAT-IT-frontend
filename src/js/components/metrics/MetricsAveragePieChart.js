@@ -3,23 +3,21 @@ import { connect } from 'react-redux';
 import { ResponsivePie } from '@nivo/pie'
 
 import MetricsPieChartSort from './js/MetricsPieChartSort';
-import MetricsAveragesSort from './js/MetricsAveragesSort';
 
 import { getBloodSugarRecords } from '../../actions/index';
 
 const mapStateToProps = (state) => {
-    return { bloodSugarRecords: state.bloodSugarRecords }
+    return { pieChartData: state.pieChartData}
 };
 
-const MetricsAveragePieChart = ({ bloodSugarRecords }) => {
-    const averagesObj = MetricsPieChartSort.startSort(MetricsAveragesSort.startAverageSort(bloodSugarRecords));
+const MetricsAveragePieChart = ({ pieChartData }) => {
     return (
         <div>
         <h2>Average Blood Sugar Broken Down </h2>
-        { averagesObj.length > 0 && averagesObj[0].value !== 'u' &&
+        { pieChartData.length > 0 && pieChartData[0].value !== 'u' && pieChartData !== undefined &&
         <div className="pie-chart-container">
             <ResponsivePie
-                data={averagesObj}
+                data={pieChartData}
                 margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
                 innerRadius={0.5}
                 theme={{  

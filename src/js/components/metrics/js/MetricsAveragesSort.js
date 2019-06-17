@@ -4,13 +4,32 @@ export default {
     averageSkeleton: {},
 
     setAverageKeyValuePair(obj, key, value) {
-        obj[key] = value;
+        key === "total_average" ? obj[key] = value : obj[key] = [value]
         return obj;
     },
 
-    calculateAverageKeyValuePair(obj, key, value) {
-        const newAverage = Math.floor((obj[key] + value) / 2)
-        return obj[key] = newAverage;
+    averageBloodSugarArrays(averagesObject) {
+        let finalObject = averagesObject;
+        Object.keys(averagesObject).forEach(timeOfDay => {
+            if(timeOfDay === 'total_average') {
+                return 
+            } else {
+                return finalObject[timeOfDay] = Math.floor(_.mean(finalObject[timeOfDay]));
+            }
+        });
+        return averagesObject;
+    },
+
+    addValuesToArrayToAverage(obj, key, value) {
+        let newArr;
+        if (_.isEmpty(obj[key]) || obj[key] === undefined || !obj[key]) {
+            obj[key] = [value]
+        } else {
+            let newArr = obj[key];
+            newArr.push(value)
+            obj[key] = newArr;
+        }
+        return obj
     },
 
     createBloodSugarsArray(bloodSugarRecords) {
@@ -25,10 +44,10 @@ export default {
             if (!averagesObject.hasOwnProperty(record.record_time)) {
                 return { ...averagesObject, ...(this.setAverageKeyValuePair(averagesObject, record.record_time, record.blood_sugar)) };
             } else {
-                return this.calculateAverageKeyValuePair(averagesObject, record.record_time, record.blood_sugar)
+                return this.addValuesToArrayToAverage(averagesObject, record.record_time, record.blood_sugar)
             }
         });      
-        return newAveragesObject;
+        return this.averageBloodSugarArrays(newAveragesObject);
     },
 
     calculateTotalAverage(bloodSugarRecords) {
@@ -39,7 +58,7 @@ export default {
     },
 
     startAverageSort(bloodSugarRecords) {
-        if (bloodSugarRecords.length > 0) {
+        if (bloodSugarRecords.length > 0 || bloodSugarRecords !== undefined || !bloodSugarRecords) {
             return (this.calculateTotalAverage(bloodSugarRecords))                      
         } else {
             return "undefined";

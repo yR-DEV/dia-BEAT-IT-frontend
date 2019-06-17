@@ -23,7 +23,6 @@ export class ProfileContainer extends React.Component {
 
     componentDidMount = () => {
         this.props.getDiabetesProfile(this.props.userId);
-        // console.log(this.props);
         
     }
 

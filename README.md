@@ -20,13 +20,10 @@
 ## Backend Repo: https://github.com/yeah-right/dia-BEAT-IT-backend
 
 # Technologies Used:
-- [React 16.8](https://reactjs.org/)
+- [React 16.8, `npm install react react-router-dom`](https://reactjs.org/)
 - [Redux 4.0.0, `npm install react-redux redux-thunk`](https://redux.js.org)
 - `npm install materialize-css@next`
-- `npm install react-router-dom`
-- `npm install react-redux`
 - `npm install uuid`
-- `npm install redux-thunk`
 - `npm install lodash`
 - `npm install @nivo/line`
 - `npm install @nivo/pie`

@@ -3,26 +3,33 @@ import { ADD_BLOOD_SUGAR_RECORD,
          PROFILE_DATA_LOADED,
          USER_LOGIN,
          EDIT_DIABETES_PROFILE,
-         USER_LOGOUT} from '../constants/action-types'; 
+         USER_LOGOUT} from '../constants/action-types';
+import MetricAveragesSort from '../components/metrics/js/MetricsAveragesSort'; 
+import MetricsPieChartSort from '../components/metrics/js/MetricsPieChartSort';
+import { getBloodSugarRecords } from '../actions/index';          
          
 var jwtDecode = require('jwt-decode');       
 
 const initialState = {
     bloodSugarRecords: [],
     userDiabetesProfile: [],
+    bloodSugarAverages: {},
+    pieChartData: [],
     loggedIn: false,
     userId: 0
 }
 
 const rootReducer = (state = initialState, action) => {
     if (action.type === ADD_BLOOD_SUGAR_RECORD) {
-        return Object.assign({}, state, {
-            bloodSugarRecords: state.bloodSugarRecords.concat(action.payload)
-        });
+        getBloodSugarRecords(state.userId);
     }
     if (action.type === RECORD_DATA_LOADED) {
+        const recordAverages = MetricAveragesSort.startAverageSort(action.payload)
+        const averagesPieChartData = MetricsPieChartSort.startSort(recordAverages);
         return Object.assign({}, state, {
-            bloodSugarRecords: action.payload
+            bloodSugarRecords: action.payload,
+            bloodSugarAverages: recordAverages,
+            pieChartData: averagesPieChartData,
         })
     }
     if (action.type === PROFILE_DATA_LOADED) {
