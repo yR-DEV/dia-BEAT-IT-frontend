@@ -22,7 +22,7 @@ const rootReducer = (state = initialState, action) => {
     }
     if (action.type === RECORD_DATA_LOADED) {
         return Object.assign({}, state, {
-            bloodSugarRecords: state.bloodSugarRecords.concat(action.payload)
+            bloodSugarRecords: action.payload
         })
     }
     if (action.type === PROFILE_DATA_LOADED) {

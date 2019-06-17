@@ -10,9 +10,6 @@ import Login from './components/login/Login';
 import CreateAccount from './components/create_account/CreateAccount';
 import MetricsContainer from './components/metrics/MetricsContainer';
 
-
-
-
 import './App.css';
 import { getBloodSugarRecords, getDiabetesProfile } from './actions';
 

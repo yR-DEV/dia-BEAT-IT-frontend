@@ -16,7 +16,7 @@ const Nav = () => {
                     <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/records">Records</Link></li>
                     <li><Link to="/metrics">Metrics</Link></li>
-                    <li><Link to="/login">Login</Link></li>
+                    {/* <li><Link to="/login">Login</Link></li> */}
                     {/* <div className="logout-btn-container"> */}
                         <button className="btn grey logout-btn">Signout</button>
                     {/* </div> */}
@@ -28,7 +28,7 @@ const Nav = () => {
                 <li><Link to="/profile">Profile</Link></li>
                 <li><Link to="/records">Records</Link></li>
                 <li><Link to="/metrics">Metrics</Link></li>
-                <li><Link to="/login">Login</Link></li>
+                {/* <li><Link to="/login">Login</Link></li> */}
             </ul>
         </div>    
     )

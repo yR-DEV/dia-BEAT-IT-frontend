@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom';
 import uuidv1 from 'uuid'
 
 import { userLogin } from '../../actions/index';
@@ -19,7 +20,7 @@ export class Login extends React.Component {
         super();
         this.state = {
             email: "",
-            password: ""
+            password: "",
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,6 +37,7 @@ export class Login extends React.Component {
         const id = uuidv1();
         const { email, password } = this.state;
         this.props.userLogin({ email, password });
+
         this.setState({ email: '', password: '' });
     }
 

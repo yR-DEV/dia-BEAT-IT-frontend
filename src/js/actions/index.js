@@ -69,7 +69,7 @@ export function addBloodSugarRecord(payload) {
                 "Accept": "application/json",
                 "Authorization": token,
                 },
-            body: JSON.stringify({...payload, user_id: 1})
+            body: JSON.stringify({...payload, user_id: 3})
         }).then(response => { 
             dispatch({ type: ADD_BLOOD_SUGAR_RECORD, payload }) 
         }).catch(console.error);
