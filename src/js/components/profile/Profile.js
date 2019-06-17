@@ -11,7 +11,7 @@ const Profile = ({ userDiabetesProfile }) => {
 
         return (
             <div className="">
-            { !_.isEmpty(userDiabetesProfile) &&
+            { !_.isEmpty(userDiabetesProfile) && userDiabetesProfile.user !== undefined &&
                 <div className="">
                         <div className="row">
                             <h3>{userDiabetesProfile.user.email}</h3>

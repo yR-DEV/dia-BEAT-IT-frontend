@@ -61,7 +61,7 @@ export class Login extends React.Component {
                                         <button className=" btn green accent-4" onClick={this.handleSubmit}>Submit</button>
                                     </div>
                                     <div className="col s6">
-                                    <button  className="waves-effect waves-light btn green accent-4 root-url-btn"><Link to="/">Home</Link></button>
+                                    <button className="waves-effect waves-light btn green accent-4 root-url-btn"><Link to="/">Home</Link></button>
                                     </div>
                                 </div>
                             </div>

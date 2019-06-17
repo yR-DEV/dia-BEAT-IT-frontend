@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import BetesNav from './components/navigation/Nav';
@@ -31,28 +31,47 @@ class App extends React.Component {
                     <HomePage />
                   )}
                 />
-            { this.props.state.loggedIn && 
               <div>
-              <BetesNav />
+              { this.props.state.loggedIn ? (
+                <BetesNav />
+              ) : (
+                <div></div>
+              )}  
               <div className="main-container">
                 <Route path="/records" 
                   render={() => (
-                    <RecordsContainer />
+                    this.props.state.loggedIn ? (
+                      <RecordsContainer />
+                    ) : (
+                      <Redirect to='/' />
+                    )
                   )}
                 />
                 <Route path="/profile"
                   render={() => (
-                    <ProfileContainer />
+                    this.props.state.loggedIn ? (
+                      <ProfileContainer />
+                    ) : (
+                      <Redirect to="/" />
+                    )
                   )}
                 />
                 <Route path="/metrics"
                   render={() => (
-                    <MetricsContainer />
+                    this.props.state.loggedIn ? (
+                      <MetricsContainer />
+                    ) : (
+                      <Redirect to="/" />
+                    )
+                  )}
+                />
+                <Route path="/logout" 
+                  render={() => (
+                    <Redirect to='/' />
                   )}
                 />
               </div>
               </div>
-            }
            { !this.props.state.loggedIn &&
             <div>
              <Route path="/login"
