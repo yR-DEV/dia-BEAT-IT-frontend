@@ -21,7 +21,7 @@
 
 # Technologies Used:
 - [React 16.8](https://reactjs.org/)
-- [Redux 4.0.0](https://redux.js.org)
+- [Redux 4.0.0, `npm install react-redux redux-thunk`](https://redux.js.org)
 - `npm install materialize-css@next`
 - `npm install react-router-dom`
 - `npm install react-redux`
