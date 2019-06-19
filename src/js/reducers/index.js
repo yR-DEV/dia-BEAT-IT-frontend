@@ -20,6 +20,7 @@ const initialState = {
     redirect: false,
 }
 
+// Root Reducer with conditional logic based on action pased to it
 const rootReducer = (state = initialState, action) => {
     if (action.type === ADD_BLOOD_SUGAR_RECORD) {
         return Object.assign({ }, state, { });
@@ -48,7 +49,7 @@ const rootReducer = (state = initialState, action) => {
     if(action.type === USER_LOGIN) {
         if(action.res.auth_token !== undefined) {
             const tokenDecoded = jwtDecode(action.res.auth_token)
-            getDiabetesProfile(tokenDecoded.user_id)
+            // getDiabetesProfile(tokenDecoded.user_id)
             return Object.assign({}, state, {
                 loggedIn: true,
                 userId: tokenDecoded.user_id,

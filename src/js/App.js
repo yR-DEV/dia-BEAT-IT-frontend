@@ -17,6 +17,7 @@ const mapStateToProps = (state) => ({ state });
 
 class App extends React.Component {
 
+  // Conditional rendering whether or not user is logged in
   render() {
     return (
       <div className="App">
@@ -88,7 +89,6 @@ class App extends React.Component {
                )}
              />
            </div>
-           } 
         </Router>        
       </div>
     );
