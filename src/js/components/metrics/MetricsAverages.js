@@ -4,10 +4,11 @@ import { getBloodSugarRecords } from '../../actions/index';
 var _ = require('lodash');
 
 const mapStateToProps = (state) => {
-    return { bloodSugarAverages: state.bloodSugarAverages }
+    return { bloodSugarAverages: state.bloodSugarAverages, userDiabetesProfile: state.userDiabetesProfile }
 };
 
-const MetricsAverages = ({ bloodSugarAverages }) => {  
+const MetricsAverages = ({ bloodSugarAverages, userDiabetesProfile }) => {  
+    {console.log(userDiabetesProfile)}
         return (
             <div className="averages-container">
                 <h1>Averages by Time of Day</h1>

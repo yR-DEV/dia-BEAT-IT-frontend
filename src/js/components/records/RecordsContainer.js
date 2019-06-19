@@ -7,7 +7,7 @@ import Record from './Record';
 import { getBloodSugarRecords, getDiabetesProfile } from '../../actions/index';
 
 const mapStateToProps = (state) => {
-    return { bloodSugarRecords: state.bloodSugarRecords, userId: state.userId }
+    return { bloodSugarRecords: state.bloodSugarRecords, userId: state.userId, redirect: state.redirect }
 };
 
 class RecordsContainer extends React.Component {
@@ -15,10 +15,10 @@ class RecordsContainer extends React.Component {
     componentDidMount() {
         const { userId } = this.props;
         this.props.getBloodSugarRecords(userId);
+        this.props.getDiabetesProfile(userId);
     }
 
     render() {
-        
         let records = this.props.bloodSugarRecords.map(record => {
             return <Record key={record.id} record={record} />
         });

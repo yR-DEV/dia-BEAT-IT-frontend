@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import BetesNav from './components/navigation/Nav';
@@ -16,11 +16,6 @@ import { getBloodSugarRecords, getDiabetesProfile } from './actions';
 const mapStateToProps = (state) => ({ state });
 
 class App extends React.Component {
-
-  componentDidMount = () => {
-    // this.props.getBloodSugarRecords();
-    this.props.getDiabetesProfile();
-  }
 
   render() {
     return (
@@ -72,16 +67,24 @@ class App extends React.Component {
                 />
               </div>
               </div>
-           { !this.props.state.loggedIn &&
+           
             <div>
              <Route path="/login"
-               render={() => (
-                 <Login />
+              render={() => (
+                this.props.state.loggedIn ? (
+                  <Redirect to="/records" />
+                ) : (
+                  <Login />
+                )
                )}
              />
              <Route path="/create-account"
                render={() => (
-                 <CreateAccount />
+                 this.props.state.loggedIn ? (
+                   <Redirect to="/records" />
+                 ) : (
+                   <CreateAccount />
+                 )
                )}
              />
            </div>

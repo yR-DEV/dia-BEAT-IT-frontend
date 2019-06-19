@@ -21,11 +21,6 @@ export class ProfileContainer extends React.Component {
         this.toggleEdit = this.toggleEdit.bind(this);
     }
 
-    componentDidMount = () => {
-        this.props.getDiabetesProfile(this.props.userId);
-        
-    }
-
     toggleEdit = (event) => {
         this.setState({ isEditing: !this.state.isEditing })
     }

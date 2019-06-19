@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import MetricsAverages from './MetricsAverages';
 import MetricsDayLineGraph from './MetricsDayLineGraph';
 import MetricsAveragePieChart from './MetricsAveragePieChart';
-// import MetricsInsulinAveragePieChart from './MetricsInsulinAveragePieChart';
 
 import { getBloodSugarRecords } from '../../actions/index';
 
@@ -29,14 +28,7 @@ const MetricsContainer = ({ bloodSugarRecords }) => {
           <MetricsDayLineGraph 
           />
         </div>
-        {/* <div className="card">
-          <MetricsInsulinAveragePieChart 
-            averagesObject={this.state.averagesObject}
-          />
-        </div> */}
-        {/* <MetricsBSRecord /> */}
       </div>
-
     )
 }
 

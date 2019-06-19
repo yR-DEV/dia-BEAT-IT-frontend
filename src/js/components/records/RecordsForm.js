@@ -4,11 +4,7 @@ import uuidv1 from 'uuid';
 import { addBloodSugarRecord, getBloodSugarRecords } from '../../actions/index';
 import M from 'materialize-css';
 
-// function mapDispatchToProps(dispatch) {
-//     return { addBloodSugarRecord: record => dispatch(addBloodSugarRecord(record)),
-//      };
-// }
-
+// Mapping state to props for this class component, need the user Id specifically to validate API calls
 const mapStateToProps = (state) => {
     return { bloodSugarAverages: state.bloodSugarAverages, userId: state.userId }
 }
@@ -77,7 +73,7 @@ class ConnectRecordForm extends React.Component {
                             <div className="input-field col s2 ui-interface-background white-text">
                                 <label className="white-text" htmlFor="record_time"></label>
                                 <select name="record_time" className="ui-interface-background white-text" onChange={this.handleChange}>
-                                    <option className="ui-interface-background white-text" value="" defaultValue>Time</option>
+                                    <option className="ui-interface-background white-text" defaultValue>Time</option>
                                     <option value="morning">Morning</option>
                                     <option value="preBreakfast">PreBreakfast</option>
                                     <option value="postBreakfast">PostBreakfast</option>

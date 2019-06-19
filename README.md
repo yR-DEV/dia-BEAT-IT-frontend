@@ -1,5 +1,5 @@
 
-# dia-BEAT-IT Readme
+# dia-BEAT-IT Backend
 
 ![alt text](https://i.imgur.com/cPBt8fl.png "Type 1 Diabetes Image")
 # 
@@ -22,11 +22,9 @@
 # Technologies Used:
 - [React 16.8, `npm install react react-router-dom`](https://reactjs.org/)
 - [Redux 4.0.0, `npm install react-redux redux-thunk`](https://redux.js.org)
-- `npm install materialize-css@next`
-- `npm install uuid`
-- `npm install lodash`
-- `npm install @nivo/line`
-- `npm install @nivo/pie`
+- [PostgreSQL 11.3](https://www.postgresql.org/)
+- `npm install materialize-css@next uuid lodash @nivo/line @nivo/pie`
+
 
 # Setup 
 - `npm install`

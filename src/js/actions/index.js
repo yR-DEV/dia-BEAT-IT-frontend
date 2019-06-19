@@ -9,6 +9,7 @@ const RECORD_API = "http://localhost:3000/api/v1/blood_sugar_records"
 const PROFILE_API = "http://localhost:3000/api/v1/diabetes_metrics"
 const USER_API = "http://localhost:3000/authenticate"
 
+// Checks password entered by user against created account in the database
 export function userLogin(payload) {
     return function(dispatch) {
         return fetch(USER_API, {
@@ -34,6 +35,7 @@ export function createLogin(newUserParams) {
 
 }
 
+// Logs the user out, deletes auth key stored in local storage
 export function userLogout() {
     return function(dispatch) {
         localStorage.removeItem("auth_token");
@@ -41,6 +43,7 @@ export function userLogout() {
     }
 }
 
+// PATCH for editing/updating changes made to user profile
 export function editDiabetesProfile(payload) {
     return function(dispatch) {
         const token = localStorage.getItem("auth_token");

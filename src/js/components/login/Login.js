@@ -1,17 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
-import uuidv1 from 'uuid'
+import { BrowserRouter as Redirect, Link, Router, Route } from 'react-router-dom';
 
 import { userLogin } from '../../actions/index';
-
-import { BrowserRouter as Link } from 'react-router-dom';
 
 import './Login.css'
 import { log } from 'util';
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
     return { userLogin: login => dispatch(userLogin(login)) };
+}
+
+const mapStateToProps = (state) => {
+    return { redirect: state.redirect }
 }
 
 export class Login extends React.Component {
@@ -21,6 +22,8 @@ export class Login extends React.Component {
         this.state = {
             email: "",
             password: "",
+            id: 0,
+            redirect: false,
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,25 +37,22 @@ export class Login extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        const id = uuidv1();
         const { email, password } = this.state;
-        this.props.userLogin({ email, password });
-
-        this.setState({ email: '', password: '' });
+        this.props.userLogin({ email, password })
+        this.setState({ email: '', password: '', redirect: !this.state.redirect });
     }
+
 
     render() {
         return (
             <div className="container">
                 <div className="card login-form-container">
-                    {/* <form> */}
                         <div className="row">
                             <div className="green accent-4 header-login-form-container">
                             <h1 className="white-text">Login</h1>
                             </div>   
                         </div> 
                         <div className="login-form-input-container">
-                            {/* <input placeholder="Username" name="username" type="text" required="" /> */}
                             <input className="white-text" placeholder="Email" name="email" type="text" required="" onChange={this.handleChange} />
                             <input className="white-text" placeholder="Password" name="password" type="password" required="" onChange={this.handleChange} />
                             <div className="login-form-submit-btn">
@@ -61,17 +61,15 @@ export class Login extends React.Component {
                                         <button className=" btn green accent-4" onClick={this.handleSubmit}>Submit</button>
                                     </div>
                                     <div className="col s6">
-                                    <button className="waves-effect waves-light btn green accent-4 root-url-btn"><Link to="/">Home</Link></button>
+                                    <Link to="/"><button className="waves-effect waves-light btn green accent-4 root-url-btn">Home</button></Link>
                                     </div>
                                 </div>
                             </div>
                         </div>    
-                    {/* </form> */}
                 </div>    
             </div>  
         )
     }
 }
 
-const LoginForm = connect(null, mapDispatchToProps)(Login)
-export default LoginForm;
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
