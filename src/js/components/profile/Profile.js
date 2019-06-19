@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './Profile.css'
 
 var _ = require('lodash');
 
@@ -56,7 +57,8 @@ const Profile = ({ userDiabetesProfile }) => {
 
                                 </div>
                                 <div className="col s4">
-                                    <p>:</p>
+                                <a><img className="profile-logo" src="https://smallimg.pngkey.com/png/small/71-719828_the-awesome-smiley-face-by-thevideogameguy-d5atcdm-awesome.png"/></a>
+
 
                                 </div>
                         </div>
