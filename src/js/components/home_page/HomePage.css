@@ -1,48 +1,33 @@
-html,
-body,
-header,
-.view {
-  height: 100%;
+
+
+#view-homepage-background {
+    background-image: url('https://i.pinimg.com/originals/2c/42/29/2c4229028fa9069ebaf1940cb02ecc35.jpg') !important;
+    background-repeat: no-repeat !important; 
+    background-size: cover !important;
+    /* background-color: #1C2331 !important */
 }
 
-@media (max-width: 740px) {
-  html,
-  body,
-  header,
-  .view {
-    height: 1000px;
-  }
+.home-page-title {
+    background-color: grey;
 }
 
-@media (min-width: 800px) and (max-width: 850px) {
-  html,
-  body,
-  header,
-  .view {
-    height: 650px;
-  }
+.icon-color-homepage {
+    color: rgb(2,199,83);
 }
-@media (min-width: 800px) and (max-width: 850px) {
-  .navbar:not(.top-nav-collapse) {
-     background: #1C2331!important;
-  }
+
+.homepage-title-h1 {
+    color: rgb(2,199,83);
+    font-size: 100px;
 }
-/* Navbar animation */
-.navbar {
-  background-color: rgba(0, 0, 0, 0.3); }
 
-.top-nav-collapse {
-  background-color: #1C2331; }
+.homepage-buttons {
+    background-color: rgb(2,199,83);
+}
 
-/* Adding color to the Navbar on mobile */
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #1C2331; } }
+.homepage-footer {
+    background-color: rgb(2,199,83);
+}
 
-/* Footer color for sake of consistency with Navbar */
-.page-footer {
-  background-color: #1C2331; }
-
-.view-homepage-background {
-    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg');
+.homepage-icons {
+    font-size: 60px;
 }

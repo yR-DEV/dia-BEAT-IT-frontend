@@ -1,7 +1,9 @@
 
-# dia-BEAT-IT Backend
+# dia-BEAT-IT - front end
 
-![alt text](https://i.imgur.com/cPBt8fl.png "Type 1 Diabetes Image")
+![alt text](https://i.imgur.com/Z77UXZp.png "Landing Page Screenshot")
+![alt text](https://i.imgur.com/TM6JMl3.png "Line Charting")
+![alt text](https://i.imgur.com/WIEOWX8.png "Records Table")
 # 
 ## BACKEND-REPO FOR THIS PROJECT: `https://github.com/yeah-right/dia-BEAT-IT-backend`
 ## What is it and why the bad pun on Diabetes??

@@ -11,6 +11,10 @@ class Nav extends React.Component {
         super();
     }
 
+    removeLocalStorage = () => {
+        localStorage.removeItem("auth_key");
+    }
+
     render() {
         return (
             <div className="nav-container">
@@ -20,7 +24,7 @@ class Nav extends React.Component {
                         <li ><Link className="ghost-button" to="/profile">Profile</Link></li>
                         <li ><Link className="ghost-button" to="/records">Records</Link></li>
                         <li ><Link className="ghost-button" to="/metrics">Metrics</Link></li>
-                        <li ><Link className="ghost-button" to="/logout">Logout</Link></li>
+                        <li ><Link onClick={this.removeLocalStorage}className="ghost-button" to="/logout">Logout</Link></li>
                         </ul>
                     </nav>
                 </div>    

@@ -72,9 +72,9 @@ class ConnectRecordForm extends React.Component {
                             </div>
                             <div className="input-field col s2 ui-interface-background white-text">
                                 <label className="white-text" htmlFor="record_time"></label>
-                                <select name="record_time" className="ui-interface-background white-text" onChange={this.handleChange}>
+                                <select name="record_time" className="white-text ui-interface-background" onChange={this.handleChange}>
                                     <option className="ui-interface-background white-text" defaultValue>Time</option>
-                                    <option value="morning">Morning</option>
+                                    <option className="white-text" value="morning">Morning</option>
                                     <option value="preBreakfast">PreBreakfast</option>
                                     <option value="postBreakfast">PostBreakfast</option>
                                     <option value="preLunch">PreLunch</option>

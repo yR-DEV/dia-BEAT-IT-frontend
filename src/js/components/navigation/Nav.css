@@ -1,6 +1,6 @@
 #main-navbar {
-    background: rgb(39,229,197);
-    background: linear-gradient(90deg, rgba(39,229,197,1) 0%, rgba(2,199,83,1) 100%);
+    background: rgba(2, 199, 81, 0.75);
+    /* background: linear-gradient(90deg, rgba(39,229,197,1) 0%, rgba(2,199,83,1) 100%); */
 }
 
 .ghost-button {
@@ -19,6 +19,6 @@
 }
 
 .ghost-button:hover {
-    background-color: #444444 !important;
+    background-color: #27ddb0 !important;
     color: rgb(229, 250, 241) !important;
 }

@@ -1,9 +1,11 @@
 html {
   background-color: #222222;
+  margin-bottom: 0px !important;
 }
 
 .App {
   text-align: center;
+  margin-bottom: 0px !important;
 }
 
 .App-logo {

@@ -6,7 +6,6 @@ import { ADD_BLOOD_SUGAR_RECORD,
          USER_LOGOUT} from '../constants/action-types';
 import MetricAveragesSort from '../components/metrics/js/MetricsAveragesSort'; 
 import MetricsPieChartSort from '../components/metrics/js/MetricsPieChartSort';
-import { getBloodSugarRecords, getDiabetesProfile } from '../actions/index';  
          
 var jwtDecode = require('jwt-decode');       
 
@@ -49,7 +48,6 @@ const rootReducer = (state = initialState, action) => {
     if(action.type === USER_LOGIN) {
         if(action.res.auth_token !== undefined) {
             const tokenDecoded = jwtDecode(action.res.auth_token)
-            // getDiabetesProfile(tokenDecoded.user_id)
             return Object.assign({}, state, {
                 loggedIn: true,
                 userId: tokenDecoded.user_id,
@@ -58,6 +56,9 @@ const rootReducer = (state = initialState, action) => {
         }
     }
     if (action.type === USER_LOGOUT) {
+        localStorage.removeItem("auth_token");
+        console.log('logout reducer', localStorage);
+        
         return Object.assign({}, state, {
             loggedIn: false,
             userId: 0,
