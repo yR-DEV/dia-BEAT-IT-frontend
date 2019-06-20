@@ -79,11 +79,13 @@ export default {
         return this.setIdAndLabel(averageArrays, averageData, skeletonClone)
     },
 
+    // Creates final object to be returned at the end
     createPieChartEntry(averageData) {
         const skeletonClone = this.pieChartSkeleton;
         return this.setEntryValues(averageData, skeletonClone);
     },
 
+    // Returns undefined if parameter is empty or undefined
     startSort(averagesData) {
         if (_.isEmpty(averagesData) || !averagesData || averagesData === undefined) {
             return "undefined";

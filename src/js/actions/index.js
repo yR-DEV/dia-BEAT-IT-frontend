@@ -9,6 +9,8 @@ const RECORD_API = "http://localhost:3000/api/v1/blood_sugar_records"
 const PROFILE_API = "http://localhost:3000/api/v1/diabetes_metrics"
 const USER_API = "http://localhost:3000/authenticate"
 
+var jwtDecode = require('jwt-decode');       
+
 // Checks password entered by user against created account in the database
 export function userLogin(payload) {
     return function(dispatch) {
@@ -65,6 +67,7 @@ export function editDiabetesProfile(payload) {
 export function addBloodSugarRecord(payload) {    
     return function(dispatch) {
         const token = localStorage.getItem("auth_token");
+        const tokenDecoded = jwtDecode(token);
         return fetch(RECORD_API, {
             method: "POST",
             headers: {
@@ -72,7 +75,7 @@ export function addBloodSugarRecord(payload) {
                 "Accept": "application/json",
                 "Authorization": token,
                 },
-            body: JSON.stringify({...payload, user_id: 3})
+            body: JSON.stringify({...payload, user_id: tokenDecoded.user_id})
         }).then(response => { 
             dispatch({ type: ADD_BLOOD_SUGAR_RECORD, payload }) 
         }).catch(console.error);

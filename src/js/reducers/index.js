@@ -6,6 +6,8 @@ import { ADD_BLOOD_SUGAR_RECORD,
          USER_LOGOUT} from '../constants/action-types';
 import MetricAveragesSort from '../components/metrics/js/MetricsAveragesSort'; 
 import MetricsPieChartSort from '../components/metrics/js/MetricsPieChartSort';
+
+import { getBloodSugarRecords } from '../actions/index';
          
 var jwtDecode = require('jwt-decode');       
 
@@ -22,6 +24,7 @@ const initialState = {
 // Root Reducer with conditional logic based on action pased to it
 const rootReducer = (state = initialState, action) => {
     if (action.type === ADD_BLOOD_SUGAR_RECORD) {
+        getBloodSugarRecords(state.userId);
         return Object.assign({ }, state, { });
     }
     if (action.type === RECORD_DATA_LOADED) {

@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
 
 const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
     const dayLineGraphData = MetricsDataDaySort.startDaySort(bloodSugarRecords);
+    // dayLineGraphData.reverse();
     return (
         <div className="card ui-interface-backgrounds white-text">
         <h2 className="line-graph-header">Blood Sugars by Day</h2>
@@ -20,7 +21,19 @@ const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
                 <ResponsiveLine className="white-text"
                     data={dayLineGraphData}
                     margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-                    xScale={{ type: 'point' }}
+                    xScale={{ 
+                        type: 'point',
+                        tickValues: [
+                            "Morning",
+                            "PreBreakfast",
+                            "PostBreakfast",
+                            "PreLunch",
+                            "PostLunch",
+                            "PreDinner",
+                            "PostDinner",
+                            "Night"
+                        ], 
+                    }}
                     yScale={{ type: 'linear', stacked: false, min: 'auto', max: 'auto' }}
                     curve="catmullRom"
                     lineWidth={4}

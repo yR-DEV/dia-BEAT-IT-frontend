@@ -42,12 +42,6 @@ html {
   margin-top: 50px;
 }
 
-/* .pie-chart-container {
-  height: 700px;
-  overflow: hidden; 
-  border-radius: 10px; 
-} */
-
 .jumbotron-logo {
   border-radius: 70% 
 }
@@ -66,4 +60,5 @@ html {
   color: #222;
   margin-right: 20px;
 }
+
 

@@ -9,4 +9,12 @@
 
 .profile-container {
     border-radius: 10px;
+    margin: 10%;
+}
+
+.inner-profile-container {
+    padding: 5%;
+    margin-top: -50px;
+    margin-bottom: -50px;
+    border-radius: 10px;
 }

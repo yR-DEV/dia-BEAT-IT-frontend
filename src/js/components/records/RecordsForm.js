@@ -40,8 +40,10 @@ class ConnectRecordForm extends React.Component {
         const { blood_sugar, carbs, insulin_units, record_time, record_date } = this.state;
         const id = uuidv1();
         this.props.addBloodSugarRecord({ 
-            blood_sugar, carbs, insulin_units, record_time, record_date, id 
-        }).then(res => this.props.getBloodSugarRecords(this.props.userId))
+            blood_sugar, carbs, insulin_units, record_time, record_date
+        }).then(res => {
+            return this.props.getBloodSugarRecords(this.props.userId)
+        });
         this.setState({
             id: 0,
             blood_sugar: 0,
