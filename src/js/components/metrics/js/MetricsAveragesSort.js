@@ -27,7 +27,6 @@ export default {
     // Returns a new array if the key is missing a value and if it isnt
     // it pushes a new blood sugar record tot he array to be averaged later
     addValuesToArrayToAverage(obj, key, value) {
-        let newArr;
         if (_.isEmpty(obj[key]) || obj[key] === undefined || !obj[key]) {
             obj[key] = [value]
         } else {

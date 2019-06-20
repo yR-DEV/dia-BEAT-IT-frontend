@@ -31,7 +31,7 @@ const Profile = ({ userDiabetesProfile }) => {
                             <tr>
                                 <td>
                                     <label htmlFor="weight">Weight: </label>
-                                    <h5 name="weight">{userDiabetesProfile.weight} lbs.</h5>
+                                    <h5 name="weight">{userDiabetesProfile.weight} lbs</h5>
                                 </td>
                                 <td>
                                     <label htmlFor="target_low">Target Range (low): </label>
