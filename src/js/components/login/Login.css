@@ -2,10 +2,12 @@
     width: 500px;
     margin: 0 auto;
     background-color: #444444;
+    border-radius: 10px;
 }
 
 .header-login-form-container {
     height: 80px;
+    border-radius: 10px;
 }
 
 .login-form-submit-btn {

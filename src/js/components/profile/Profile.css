@@ -2,3 +2,11 @@
     border-radius: 70%;
     width: 80px;
 }
+
+.edit-profile-button {
+    float: left;
+}
+
+.profile-container {
+    border-radius: 10px;
+}

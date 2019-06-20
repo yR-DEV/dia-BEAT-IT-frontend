@@ -15,45 +15,51 @@ const Profile = ({ userDiabetesProfile }) => {
             { !_.isEmpty(userDiabetesProfile) && userDiabetesProfile.user !== undefined &&
                 <div className="">
                         <div className="row">
-                            <h3>{userDiabetesProfile.user.email}</h3>
-                            <p>{userDiabetesProfile.personal_goal}</p>
+                        <div className="col s6 left-align">
+                            <label htmlFor="email"><h5>Email: </h5></label>
+                            <h3 name="email">{userDiabetesProfile.user.email}</h3>
+                        </div>
+                        <div className="col s6">
+                            <label htmlFor="goal"><h5>Personal Goal: </h5></label>
+                            <h5>{userDiabetesProfile.personal_goal}</h5>
+                        </div>
                         </div>
                         <div className="row">
                                 <div className="col s4">
-                                    <p>Morning Insulin/Carb Ratio: </p>
-                                    <p>{userDiabetesProfile.morning_insulin_to_carb_ratio} carbs/unit</p>
+                                    <label htmlFor="morning_ratio">Morning Insulin/Carb Ratio: </label>
+                                    <h5 name="morning_ratio">{userDiabetesProfile.morning_insulin_to_carb_ratio} carbs/unit</h5>
                                 </div>
                                 <div className="col s4">
-                                    <p>Afternoon Insulin/Carb Ratio: </p>
-                                    <p>{userDiabetesProfile.night_insulin_to_carb_ratio} carbs/unit</p>
+                                    <label htmlFor="afternoon_ratio">Afternoon Insulin/Carb Ratio: </label>
+                                    <h5 name="afternoon_ratio">{userDiabetesProfile.night_insulin_to_carb_ratio} carbs/unit</h5>
                                 </div>
                                 <div className="col s4">
-                                    <p>Lantus Units:</p>
-                                    <p>{userDiabetesProfile.lantus_units}</p>
+                                    <label htmlFor="lantus_units">Lantus Units: </label>
+                                    <h5 name="lantus_units">{userDiabetesProfile.lantus_units}</h5>
                                 </div>
                         </div>
                         <div className="row">
                                 <div className="col s4">
-                                    <p>Target Range (low): </p>
-                                    <p>{userDiabetesProfile.blood_sugar_target_low}</p>
+                                    <label htmlFor="target_low">Target Range (low): </label>
+                                    <h5 name="target_low">{userDiabetesProfile.blood_sugar_target_low}</h5>
                                 </div>
                                 <div className="col s4">
-                                    <p>Target Range (high):</p>
-                                    <p>{userDiabetesProfile.blood_sugar_target_high}</p>
+                                    <label htmlFor="target_high">Target Range (high):</label>
+                                    <h5 name="target_high">{userDiabetesProfile.blood_sugar_target_high}</h5>
                                 </div>
                                 <div className="col s4">
-                                    <p>A1C Goal: </p>
-                                    <p>{userDiabetesProfile.a1c_goal}</p>
+                                    <label htmlFor="a1c">A1C Goal: </label>
+                                    <h5 name="a1c">{userDiabetesProfile.a1c_goal}</h5>
                                 </div>
                         </div>
                         <div className="row">        
                                 <div className="col s4">
-                                    <p>Height: </p>
-                                    <p>{userDiabetesProfile.height}</p>
+                                    <label htmlFor="height">Height: </label>
+                                    <h5 name="height">{userDiabetesProfile.height}</h5>
                                 </div>
                                 <div className="col s4">
-                                    <p>Weight:</p>
-                                    <p>{userDiabetesProfile.weight}</p>
+                                    <label htmlFor="weight">Weight:</label>
+                                    <h5 name="weight">{userDiabetesProfile.weight}</h5>
 
                                 </div>
                                 <div className="col s4">

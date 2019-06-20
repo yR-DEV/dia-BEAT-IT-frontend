@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ResponsivePie } from '@nivo/pie'
 
-import MetricsPieChartSort from './js/MetricsPieChartSort';
+import './Metrics.css'
 
 import { getBloodSugarRecords } from '../../actions/index';
 
@@ -15,7 +15,7 @@ const MetricsAveragePieChart = ({ pieChartData }) => {
         <div>
         <h2>Average Blood Sugar Broken Down </h2>
         { pieChartData.length > 0 && pieChartData[0].value !== 'u' && pieChartData !== undefined &&
-        <div className="pie-chart-container">
+        <div className="pie-chart-container averages-container">
             <ResponsivePie
                 data={pieChartData}
                 margin={{ top: 40, right: 80, bottom: 80, left: 80 }}

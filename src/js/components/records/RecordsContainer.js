@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import RecordsForm from './RecordsForm';
 import Record from './Record';
+import './Record.css';
 
 import { getBloodSugarRecords, getDiabetesProfile } from '../../actions/index';
 
@@ -25,8 +26,11 @@ class RecordsContainer extends React.Component {
         return (
             <div className="container">
                 <div className="card records-container ui-interface-backgrounds"> 
+                    <div className="row">
+                        <h1 className="records-header">Blood Sugar Records</h1>
+                    </div>
                     <RecordsForm />
-                    <table>
+                    <table className="responsive-table striped">
                         <thead>
                             <tr>
                                 <th className="white-text">Date Submitted:</th>

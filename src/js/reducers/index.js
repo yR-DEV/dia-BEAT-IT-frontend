@@ -57,8 +57,6 @@ const rootReducer = (state = initialState, action) => {
     }
     if (action.type === USER_LOGOUT) {
         localStorage.removeItem("auth_token");
-        console.log('logout reducer', localStorage);
-        
         return Object.assign({}, state, {
             loggedIn: false,
             userId: 0,

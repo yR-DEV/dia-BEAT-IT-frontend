@@ -6,13 +6,17 @@ import { userLogout } from '../../actions/index';
 
 import './Nav.css'
 
+const mapDispatchToProps = (dispatch) => {
+    return { userLogout: () => dispatch(userLogout()) };
+}
+
 class Nav extends React.Component {
     constructor() {
         super();
     }
 
     removeLocalStorage = () => {
-        localStorage.removeItem("auth_key");
+        this.props.userLogout();
     }
 
     render() {
@@ -20,11 +24,16 @@ class Nav extends React.Component {
             <div className="nav-container">
                 <div className="row">
                     <nav id="main-navbar" className="navbar bg-transparent fixed-top navbar-expand-lg navbar-dark">
-                        <ul class="right hide-on-med-and-down">
+                        <ul className="right hide-on-med-and-down">
                         <li ><Link className="ghost-button" to="/profile">Profile</Link></li>
                         <li ><Link className="ghost-button" to="/records">Records</Link></li>
                         <li ><Link className="ghost-button" to="/metrics">Metrics</Link></li>
-                        <li ><Link onClick={this.removeLocalStorage}className="ghost-button" to="/logout">Logout</Link></li>
+                        <li ><Link onClick={this.removeLocalStorage} className="ghost-button" to="/logout">Logout</Link></li>
+                        </ul>
+                        <ul className="left hide-on-med-and-down">
+                            <div className="navbar-title-container">
+                                <li className="white-text title-li ghost-button"><Link to="/">dia-BEAT-IT</Link></li>
+                            </div>
                         </ul>
                     </nav>
                 </div>    
@@ -33,21 +42,4 @@ class Nav extends React.Component {
     }
 }
 
-export default connect(null, { userLogout })(Nav);
-{/* <nav>
-                    <div className="nav-wrapper green accent-4">
-                    <a className="brand-logo left"></a>
-                    <a data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-                    <ul className="right hide-on-med-and-down">
-                        <li><Link to="/profile">Profile</Link></li>
-                        <li><Link to="/records">Records</Link></li>
-                        <li><Link to="/metrics">Metrics</Link></li>
-                        <button className="btn grey logout-btn" onClick={this.props.userLogout}>Signout</button>
-                    </ul>
-                    </div>
-                </nav>
-                <ul className="sidenav" id="mobile-demo">
-                    <li><Link to="/profile">Profile</Link></li>
-                    <li><Link to="/records">Records</Link></li>
-                    <li><Link to="/metrics">Metrics</Link></li>
-                </ul> */}
+export default connect(null, mapDispatchToProps)(Nav);

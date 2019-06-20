@@ -43,7 +43,9 @@ html {
 }
 
 .pie-chart-container {
-  height: 700px;  
+  height: 700px;
+  overflow: hidden; 
+  border-radius: 10px; 
 }
 
 .line-graph-container {

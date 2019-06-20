@@ -28,45 +28,45 @@ class App extends React.Component {
                   )}
                 />
               <div>
-              { this.props.state.loggedIn ? (
-                <BetesNav />
-              ) : (
-                <div></div>
-              )}  
-              <div className="main-container">
-                <Route path="/records" 
-                  render={() => (
-                    this.props.state.loggedIn ? (
-                      <RecordsContainer />
-                    ) : (
+                { this.props.state.loggedIn ? (
+                  <BetesNav />
+                ) : (
+                  null
+                )}  
+                <div className="main-container">
+                  <Route path="/records" 
+                    render={() => (
+                      this.props.state.loggedIn ? (
+                        <RecordsContainer />
+                      ) : (
+                        <Redirect to='/' />
+                      )
+                    )}
+                  />
+                  <Route path="/profile"
+                    render={() => (
+                      this.props.state.loggedIn ? (
+                        <ProfileContainer />
+                      ) : (
+                        <Redirect to="/" />
+                      )
+                    )}
+                  />
+                  <Route path="/metrics"
+                    render={() => (
+                      this.props.state.loggedIn ? (
+                        <MetricsContainer />
+                      ) : (
+                        <Redirect to="/" />
+                      )
+                    )}
+                  />
+                  <Route path="/logout" 
+                    render={() => (
                       <Redirect to='/' />
-                    )
-                  )}
-                />
-                <Route path="/profile"
-                  render={() => (
-                    this.props.state.loggedIn ? (
-                      <ProfileContainer />
-                    ) : (
-                      <Redirect to="/" />
-                    )
-                  )}
-                />
-                <Route path="/metrics"
-                  render={() => (
-                    this.props.state.loggedIn ? (
-                      <MetricsContainer />
-                    ) : (
-                      <Redirect to="/" />
-                    )
-                  )}
-                />
-                <Route path="/logout" 
-                  render={() => (
-                    <Redirect to='/' />
-                  )}
-                />
-              </div>
+                    )}
+                  />
+                </div>
               </div>
            
             <div>

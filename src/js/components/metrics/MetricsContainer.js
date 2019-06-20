@@ -5,6 +5,8 @@ import MetricsAverages from './MetricsAverages';
 import MetricsDayLineGraph from './MetricsDayLineGraph';
 import MetricsAveragePieChart from './MetricsAveragePieChart';
 
+import './Metrics.css'
+
 import { getBloodSugarRecords } from '../../actions/index';
 
 const mapStateToProps = (state) => {
@@ -14,7 +16,7 @@ const mapStateToProps = (state) => {
 const MetricsContainer = ({ bloodSugarRecords }) => {
     return (
       <div className="container"> 
-        <div className="card ui-interface-backgrounds white-text">
+        <div className="card ui-interface-backgrounds white-text averages-container">
           <MetricsAverages 
           />    
         </div>
@@ -24,7 +26,7 @@ const MetricsContainer = ({ bloodSugarRecords }) => {
             />
           </div>
         </div>
-        <div className="card ui-interface-backgrounds white-text">
+        <div className="card ui-interface-backgrounds white-text pie-chart-container">
           <MetricsDayLineGraph 
           />
         </div>

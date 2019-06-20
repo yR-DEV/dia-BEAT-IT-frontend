@@ -12,10 +12,10 @@ class HomePage extends Component {
                 <br></br>
                 <h1 className="header center homepage-title-h1">dia-BEAT-IT</h1>
                 <div className="row center">
-                  <h4 className="header col s12 light white-text">Because together we can dia-beat-this.</h4>
+                  <h4 className="header col s12 light white-text">Because together, we can dia-beat-this.</h4>
                 </div>
                 <div className="row center">
-                  <Link className="white-text" to="/login"><a className="btn-large waves-effect waves-light icon-color-homepage homepage-buttons white-text">Login!</a></Link>
+                  <div><Link className="white-text btn-large waves-effect waves-light icon-color-homepage homepage-buttons white-text" to="/login">Login!</Link></div>
                 </div>
                 <br></br>
               </div>
@@ -44,32 +44,31 @@ class HomePage extends Component {
           </div>
         </div>
         </div>
-        <footer class="page-footer homepage-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Dev Bio</h5>
-                <p class="grey-text text-lighten-4">I am a type 1 diabetic and a student, which means I have no income and very limited health insurance. Insulin pumps allow for the extraction of Blood Sugar data in firmware, but I do not have the income nor luxury to have an insulin pump, so I made this application to help me in the meantime.</p>
+        <footer className="page-footer homepage-footer">
+          <div className="container">
+            <div className="row">
+              <div className="col l6 s12">
+                <h5 className="white-text">Bio</h5>
+                <p className="grey-text text-lighten-4">I am a type 1 diabetic and a student, which means I have no income and very limited health insurance. Insulin pumps allow for the extraction of Blood Sugar data in firmware, but I do not have the income nor luxury to have an insulin pump, so I made this application to help me in the meantime.</p>
               </div>
-              <div class="col l6 s12">
-                <h5 class="white-text">Contact/More By:</h5>
+              <div className="col l6 s12">
+                <h5 className="white-text">Contact/More By:</h5>
                 <ul>
-                  <li><a class="white-text" href="www.linkedin.com/in/zclaar">LinkedIn</a></li>
-                  <li><a class="white-text" href="https://medium.com/better-programming/so-i-wrote-a-py-web-scraper-that-sends-me-scpt-text-messages-about-job-postings-34ffef9a1128">Publication</a></li>
-                  <li><a class="white-text" href="www.github.com/yR-DEV">Github</a></li>
-                  <li><a class="white-text">claar.zack@gmail.com</a></li>
+                  <li><a className="white-text" href="www.linkedin.com/in/zclaar">LinkedIn</a></li>
+                  <li><a className="white-text" href="https://medium.com/better-programming/so-i-wrote-a-py-web-scraper-that-sends-me-scpt-text-messages-about-job-postings-34ffef9a1128">Publication</a></li>
+                  <li><a className="white-text" href="www.github.com/yR-DEV">Github</a></li>
+                  <li><a className="white-text">claar.zack@gmail.com</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="footer-copyright">
-            <div class="container">
-            <a class="orange-text text-lighten-3" href="http://github.com/yR-DEV">My GitHub</a>
+          <div className="footer-copyright">
+            <div className="container">
+            <a className="orange-text text-lighten-3" href="http://github.com/yR-DEV">My GitHub</a>
             </div>
           </div>
         </footer>
       </div> 
-       
     );
   }
 }

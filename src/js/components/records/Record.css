@@ -1,0 +1,12 @@
+.records-container {
+    padding: 4%;
+    border-radius: 10px;
+}
+
+.records-header {
+    margin-top: -15px;
+}
+
+.record-form-select {
+    color: white !important;
+}

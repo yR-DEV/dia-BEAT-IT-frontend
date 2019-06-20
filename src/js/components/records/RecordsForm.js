@@ -74,14 +74,14 @@ class ConnectRecordForm extends React.Component {
                                 <label className="white-text" htmlFor="record_time"></label>
                                 <select name="record_time" className="white-text ui-interface-background" onChange={this.handleChange}>
                                     <option className="ui-interface-background white-text" defaultValue>Time</option>
-                                    <option className="white-text" value="morning">Morning</option>
-                                    <option value="preBreakfast">PreBreakfast</option>
-                                    <option value="postBreakfast">PostBreakfast</option>
-                                    <option value="preLunch">PreLunch</option>
-                                    <option value="postLunch">PostLunch</option>
-                                    <option value="preDinner">PreDinner</option>
-                                    <option value="postDinner">PostDinner</option>
-                                    <option value="night">Night</option>
+                                    <option className="record-form-select" value="morning">Morning</option>
+                                    <option className="record-form-select" value="preBreakfast">PreBreakfast</option>
+                                    <option className="record-form-select" value="postBreakfast">PostBreakfast</option>
+                                    <option className="record-form-select" value="preLunch">PreLunch</option>
+                                    <option className="record-form-select" value="postLunch">PostLunch</option>
+                                    <option className="record-form-select" value="preDinner">PreDinner</option>
+                                    <option className="record-form-select" value="postDinner">PostDinner</option>
+                                    <option className="record-form-select" value="night">Night</option>
                                 </select>
                             </div>
                             <div className="input-field col s2 ui-interface-backgrounds">
@@ -89,7 +89,7 @@ class ConnectRecordForm extends React.Component {
                                 <input name="record_date" className="white-text" type="text" placeholder="Date mm/dd/yyyy" onInput={this.handleChange}/>
                             </div>
                             <div className="input-field col s2">
-                                <a className="waves-effect waves-light btn green accent-4 new-bs-btn" onClick={this.handleSubmit}>Submit New BloodSugar</a>
+                                <a className="waves-effect waves-light btn green accent-4 new-bs-btn" onClick={this.handleSubmit}>Save!</a>
                             </div>
                         </div>
                     </form>
