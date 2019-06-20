@@ -30,7 +30,7 @@ class RecordsContainer extends React.Component {
                         <h1 className="records-header">Blood Sugar Records</h1>
                     </div>
                     <RecordsForm />
-                    <table className="responsive-table striped">
+                    <table className="responsive-table highlight centered">
                         <thead>
                             <tr>
                                 <th className="white-text">Date Submitted:</th>

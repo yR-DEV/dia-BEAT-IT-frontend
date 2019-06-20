@@ -14,7 +14,7 @@ class HomePage extends Component {
                 <div className="row center">
                   <h4 className="header col s12 light white-text">Because together, we can dia-beat-this.</h4>
                 </div>
-                <div className="row center">
+                <div className="row center homepage-login-btn">
                   <div><Link className="white-text btn-large waves-effect waves-light icon-color-homepage homepage-buttons white-text" to="/login">Login!</Link></div>
                 </div>
                 <br></br>

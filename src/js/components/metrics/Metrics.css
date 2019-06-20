@@ -1,4 +1,24 @@
 .averages-container {
     border-radius: 10px;
     overflow: hidden;
+    padding-bottom: 15px;
 }
+
+.line-graph-container {
+    height: 650px;
+}
+
+.line-graph-header {
+    margin-bottom: -30px;
+    margin-top: 0px;
+}
+
+.pie-chart-container {
+    height: 700px;
+    overflow: hidden; 
+    border-radius: 10px; 
+  }
+
+  .pie-chart-render {
+      height: 650px;
+  }

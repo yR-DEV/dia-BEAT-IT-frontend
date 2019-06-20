@@ -89,7 +89,7 @@ class ConnectRecordForm extends React.Component {
                                 <input name="record_date" className="white-text" type="text" placeholder="Date mm/dd/yyyy" onInput={this.handleChange}/>
                             </div>
                             <div className="input-field col s2">
-                                <a className="waves-effect waves-light btn green accent-4 new-bs-btn" onClick={this.handleSubmit}>Save!</a>
+                                <a className="waves-effect waves-light btn new-bs-btn login-btn" onClick={this.handleSubmit}>Save!</a>
                             </div>
                         </div>
                     </form>

@@ -38,10 +38,7 @@ export function createLogin(newUserParams) {
 // Logs the user out, deletes auth key stored in local storage
 export function userLogout() {
     return function(dispatch) {
-        // window.localStorage.removeItem("auth_token");
         localStorage.removeItem("auth_token");
-        console.log('logout action!');
-        
         dispatch({ type: USER_LOGOUT })
     }
 }

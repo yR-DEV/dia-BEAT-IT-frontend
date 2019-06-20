@@ -1,5 +1,5 @@
 #main-navbar {
-    background: rgb(2, 199, 81);
+    background: #40AB5D;
     /* background: linear-gradient(90deg, rgba(39,229,197,1) 0%, rgba(2,199,83,1) 100%); */
 }
 
@@ -56,4 +56,11 @@
     font-size: 90px;
     margin-left: 20px;
     font-weight: bold;
+}
+
+.nav-btn {
+    height: 40px !important;
+    width: 150px !important;
+    background-color: #444444;
+    /* opacity: 0.75; */
 }

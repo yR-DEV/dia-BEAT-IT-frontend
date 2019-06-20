@@ -24,15 +24,15 @@ class Nav extends React.Component {
             <div className="nav-container">
                 <div className="row">
                     <nav id="main-navbar" className="navbar bg-transparent fixed-top navbar-expand-lg navbar-dark">
-                        <ul className="right hide-on-med-and-down">
-                        <li ><Link className="ghost-button" to="/profile">Profile</Link></li>
-                        <li ><Link className="ghost-button" to="/records">Records</Link></li>
-                        <li ><Link className="ghost-button" to="/metrics">Metrics</Link></li>
-                        <li ><Link onClick={this.removeLocalStorage} className="ghost-button" to="/logout">Logout</Link></li>
+                        <ul className="right">
+                        <li ><Link className=" waves-effect waves-light btn grey darken-3" to="/profile">Profile</Link></li>
+                        <li ><Link className=" waves-effect waves-light btn grey darken-3" to="/records">Records</Link></li>
+                        <li ><Link className=" waves-effect waves-light btn grey darken-3" to="/metrics">Metrics</Link></li>
+                        <li ><Link onClick={this.removeLocalStorage} className=" waves-effect waves-light btn grey darken-3" to="/logout">Logout</Link></li>
                         </ul>
-                        <ul className="left hide-on-med-and-down">
+                        <ul className="left">
                             <div className="navbar-title-container">
-                                <li className="white-text title-li ghost-button"><Link to="/">dia-BEAT-IT</Link></li>
+                                <li ><Link className="waves-effect waves-light btn grey darken-3" to="/">dia-BEAT-IT</Link></li>
                             </div>
                         </ul>
                     </nav>

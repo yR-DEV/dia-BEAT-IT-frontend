@@ -1,14 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { ResponsiveLine } from '@nivo/line';
-
-
-import MetricsDataDaySort from './js/MetricsDataDaySort';
-
 import { getBloodSugarRecords } from '../../actions/index';
-
+import MetricsDataDaySort from './js/MetricsDataDaySort';
+import './Metrics.css';
 var _ = require('lodash');
-
 
 const mapStateToProps = (state) => {
     return { bloodSugarRecords: state.bloodSugarRecords }
@@ -17,8 +13,8 @@ const mapStateToProps = (state) => {
 const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
     const dayLineGraphData = MetricsDataDaySort.startDaySort(bloodSugarRecords);
     return (
-        <div className="card ui-interface-backgrounds white-text"> 
-        <h2>Blood Sugars by Day</h2>
+        <div className="card ui-interface-backgrounds white-text">
+        <h2 className="line-graph-header">Blood Sugars by Day</h2>
             {!_.isEmpty(dayLineGraphData) && dayLineGraphData.length > 0 && bloodSugarRecords.length > 0 &&
             <div className="line-graph-container ui-interface-backgrounds white-text">
                 <ResponsiveLine className="white-text"
@@ -26,7 +22,7 @@ const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
                     margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
                     xScale={{ type: 'point' }}
                     yScale={{ type: 'linear', stacked: false, min: 'auto', max: 'auto' }}
-                    curve="linear"
+                    curve="catmullRom"
                     lineWidth={4}
                     axisTop={null}
                     axisRight={null}
@@ -58,7 +54,7 @@ const MetricsDayLineGraph = ({ bloodSugarRecords }) => {
                             }
                         }
                     }}
-                    colors={{ scheme: 'set1' }}
+                    colors={{ scheme: 'greens' }}
                     pointSize={10}
                     pointColor={{ theme: 'background' }}
                     pointBorderWidth={2}

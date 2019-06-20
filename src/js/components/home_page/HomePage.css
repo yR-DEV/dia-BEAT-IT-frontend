@@ -12,22 +12,27 @@
 }
 
 .icon-color-homepage {
-    color: rgb(2,199,83);
+    color: #40AB5D;
 }
 
 .homepage-title-h1 {
-    color: rgb(2,199,83);
+    color: #40AB5D;
     font-size: 100px;
 }
 
 .homepage-buttons {
-    background-color: rgb(2,199,83);
+    background-color: #40AB5D;
 }
 
 .homepage-footer {
-    background-color: rgb(2,199,83);
+    background-color: #40AB5D;
 }
 
 .homepage-icons {
     font-size: 60px;
+}
+
+.homepage-login-btn {
+    padding-bottom: -90px;
+    padding-top: -90px;
 }

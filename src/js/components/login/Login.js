@@ -48,7 +48,7 @@ export class Login extends React.Component {
             <div className="container">
                 <div className="card login-form-container">
                         <div className="row">
-                            <div className="green accent-4 header-login-form-container">
+                            <div className="login-header header-login-form-container">
                             <h1 className="white-text">Login</h1>
                             </div>   
                         </div> 
@@ -58,10 +58,10 @@ export class Login extends React.Component {
                             <div className="login-form-submit-btn">
                                 <div className="row">
                                     <div className="col s6">
-                                        <button className=" btn green accent-4" onClick={this.handleSubmit}>Submit</button>
+                                        <button className="waves-effect waves-light btn login-btn" onClick={this.handleSubmit}>Submit</button>
                                     </div>
                                     <div className="col s6">
-                                    <Link to="/"><button className="waves-effect waves-light btn green accent-4 root-url-btn">Home</button></Link>
+                                    <Link to="/"><button className="waves-effect waves-light btn login-btn">Home</button></Link>
                                     </div>
                                 </div>
                             </div>

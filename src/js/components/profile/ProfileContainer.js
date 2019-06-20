@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { getDiabetesProfile } from '../../actions/index';
 import Profile from './Profile';
 import ProfileForm from './ProfileForm';
-
-import { getDiabetesProfile } from '../../actions/index';
 
 var _ =  require('lodash');
 
@@ -34,7 +32,7 @@ export class ProfileContainer extends React.Component {
                             <br></br>
                             <br></br>
                             <div className="row">
-                                <a className="waves-effect waves-light btn green accent-4 edit-profile-button" onClick={this.toggleEdit}>EDIT</a>
+                                <a className="waves-effect waves-light login-btn edit-profile-button" onClick={this.toggleEdit}>EDIT</a>
                             </div>
 
                             <div className="">

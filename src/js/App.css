@@ -42,15 +42,11 @@ html {
   margin-top: 50px;
 }
 
-.pie-chart-container {
+/* .pie-chart-container {
   height: 700px;
   overflow: hidden; 
   border-radius: 10px; 
-}
-
-.line-graph-container {
-  height: 700px;
-}
+} */
 
 .jumbotron-logo {
   border-radius: 70% 

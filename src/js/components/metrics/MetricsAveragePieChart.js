@@ -12,10 +12,10 @@ const mapStateToProps = (state) => {
 
 const MetricsAveragePieChart = ({ pieChartData }) => {
     return (
-        <div>
+        <div className="pie-chart-container">
         <h2>Average Blood Sugar Broken Down </h2>
         { pieChartData.length > 0 && pieChartData[0].value !== 'u' && pieChartData !== undefined &&
-        <div className="pie-chart-container averages-container">
+        <div className="pie-chart-render averages-container">
             <ResponsivePie
                 data={pieChartData}
                 margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
@@ -30,7 +30,7 @@ const MetricsAveragePieChart = ({ pieChartData }) => {
                 }}
                 padAngle={0.7}
                 cornerRadius={3}
-                colors={{ scheme: 'paired' }}
+                colors={{ scheme: 'greens' }}
                 borderWidth={1}
                 borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
                 radialLabelsSkipAngle={10}
@@ -42,7 +42,8 @@ const MetricsAveragePieChart = ({ pieChartData }) => {
                 radialLabelsLinkStrokeWidth={1}
                 radialLabelsLinkColor={{ from: 'color' }}
                 slicesLabelsSkipAngle={10}
-                slicesLabelsTextColor="#ffffff"
+                slicesLabelsTextColor="#000000"
+                slicesLabelsTextSize={14}
                 animate={true}
                 motionStiffness={90}
                 motionDamping={15}
