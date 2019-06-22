@@ -68,27 +68,26 @@ class App extends React.Component {
                   />
                 </div>
               </div>
-           
             <div>
-             <Route path="/login"
-              render={() => (
-                this.props.state.loggedIn ? (
-                  <Redirect to="/records" />
-                ) : (
-                  <Login />
-                )
-               )}
-             />
-             <Route path="/create-account"
-               render={() => (
-                 this.props.state.loggedIn ? (
-                   <Redirect to="/records" />
-                 ) : (
-                   <CreateAccount />
-                 )
-               )}
-             />
-           </div>
+              <Route path="/login"
+                render={() => (
+                  this.props.state.loggedIn ? (
+                    <Redirect to="/records" />
+                  ) : (
+                    <Login />
+                  )
+                )}
+              />
+              <Route path="/create-account"
+                render={() => (
+                  this.props.state.loggedIn ? (
+                    <Redirect to="/records" />
+                  ) : (
+                    <CreateAccount />
+                  )
+                )}
+              />
+            </div>
         </Router>        
       </div>
     );

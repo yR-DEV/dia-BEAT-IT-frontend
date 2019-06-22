@@ -17,7 +17,7 @@ const Profile = ({ userDiabetesProfile }) => {
                     <table className="responsive-table highlight left-align">
                         <tbody>
                             <tr>
-                                <td>
+                                <td className="left-align">
                                     <label htmlFor="email"><h5>Email: </h5></label>
                                     <h4 name="email">{userDiabetesProfile.user.email}</h4>
                                 </td>
@@ -37,9 +37,9 @@ const Profile = ({ userDiabetesProfile }) => {
                                     <label htmlFor="target_low">Target Range (low): </label>
                                     <h5 name="target_low">{userDiabetesProfile.blood_sugar_target_low} mg/dl</h5>
                                 </td>
-                                <td>
+                                <td className="left-align">
                                     <label htmlFor="target_high">Target Range (high):</label>
-                                    <h5 name="target_high">{userDiabetesProfile.blood_sugar_target_high} mg/dl</h5>
+                                    <h5 className="left-align" name="target_high">{userDiabetesProfile.blood_sugar_target_high} mg/dl</h5>
                                 </td>
                             </tr>
                             <tr>
