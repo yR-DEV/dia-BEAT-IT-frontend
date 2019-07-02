@@ -33,9 +33,9 @@ export function userLogin(payload) {
     }
 }
 
-export function createLogin(newUserParams) {
+// export function createLogin(newUserParams) {
 
-}
+// }
 
 // Logs the user out, deletes auth key stored in local storage
 export function userLogout() {

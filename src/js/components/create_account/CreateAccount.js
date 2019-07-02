@@ -3,7 +3,7 @@ import { BrowserRouter as Link } from 'react-router-dom';
 // import { connect } from 'react-redux';
 // import uuidv1 from 'uuid';
 
-import { createLogin } from '../../actions/index';
+// import { createLogin } from '../../actions/index';
 
 import './CreateAccount.css';
 
@@ -34,7 +34,7 @@ export default class CreateAccount extends React.Component {
         event.preventDefault();
         // const id = uuidv1();
         const { email, username, password } = this.state;
-        this.props.createLogin({ email, username, password });
+        // this.props.createLogin({ email, username, password });
         this.setState({ email: '', username: '', password: '' });
     }
 
