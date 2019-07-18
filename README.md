@@ -2,8 +2,8 @@
 # dia-BEAT-IT - front end
 
 ![alt text](https://i.imgur.com/YbyLjA3.png "Landing") 
-![alt text](https://i.imgur.com/12WwOgz.png "Records Table")
 ![alt text](https://i.imgur.com/0P0ZByt.png "Mapped Records")
+![alt text](https://i.imgur.com/12WwOgz.png "Records Table")
 # 
 - BACKEND: `https://github.com/yeah-right/dia-BEAT-IT-backend`
 ## What is it and why the bad pun on Diabetes??
