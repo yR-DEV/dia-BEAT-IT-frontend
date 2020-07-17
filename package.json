@@ -6,7 +6,7 @@
     "@nivo/line": "^0.59.0",
     "@nivo/pie": "^0.59.0",
     "jwt-decode": "^2.2.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "materialize-css": "^1.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
